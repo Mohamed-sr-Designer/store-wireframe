@@ -230,6 +230,68 @@
   chips.forEach(c => c.addEventListener("click", ev => { if (c.hasAttribute("data-nav")) return; chips.forEach(x => x.classList.remove("active")); c.classList.add("active"); }));
   renderCart();
 
+  /* ---------- Entry points (no <a>): wire account/wishlist/checkout ---------- */
+  document.querySelectorAll(".header__tools .tool").forEach(t => { const s = t.querySelector("small"); if (!s) return; const v = s.textContent.trim(); if (v === "حسابي") t.dataset.nav = "account.html"; else if (v === "المفضلة") t.dataset.nav = "wishlist.html"; });
+  document.querySelectorAll(".tabbar__i").forEach(t => { const s = t.querySelector("span:last-child"); if (s && s.textContent.trim() === "المفضلة") t.dataset.nav = "wishlist.html"; });
+  document.querySelectorAll(".mnav nav span").forEach(s => { if (s.textContent.trim() === "حسابي") s.dataset.nav = "account.html"; });
+  document.querySelectorAll("#cartFoot .btn--block").forEach(b => b.dataset.nav = "checkout.html");
+  document.querySelectorAll("button").forEach(b => { if (b.textContent.trim() === "شراء الآن") b.dataset.nav = "checkout.html"; });
+  // heart toggle (outside wishlist)
+  document.addEventListener("click", e => { const w = e.target.closest(".wish"); if (!w || w.closest("#wishGrid")) return; w.classList.toggle("on"); });
+
+  function emptyHTML(title, sub) { return `<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><h3>${title}</h3><p>${sub}</p><button class="btn" data-nav="category.html" type="button">تصفّح المنتجات</button></div>`; }
+
+  /* ---------- Wishlist page ---------- */
+  const wg = document.getElementById("wishGrid");
+  if (wg) {
+    let WISH = [...BEST.slice(0, 4), ...CUTS.slice(0, 4)].map((p, i) => ({ ...p, id: "wl" + i }));
+    const wc = document.getElementById("wishCount"), wa = document.getElementById("wishActions");
+    function renderWish() {
+      if (!WISH.length) { wg.innerHTML = ""; document.getElementById("wishArea").innerHTML = emptyHTML("قائمة مفضلتك فاضية", "تصفّح المنتجات وأضف اللي يعجبك بضغطة على القلب."); return; }
+      wg.innerHTML = WISH.map(p => cardHTML(p).replace('class="wish"', 'class="wish on"')).join("");
+      bindAdd(wg);
+      if (wc) wc.textContent = WISH.length;
+    }
+    renderWish();
+    wg.addEventListener("click", e => {
+      const w = e.target.closest(".wish"); if (!w) return;
+      const card = w.closest(".pcard"); const idx = [...wg.children].indexOf(card);
+      if (idx > -1) { WISH.splice(idx, 1); renderWish(); toast("تمت الإزالة من المفضلة"); }
+    });
+    const addAll = document.getElementById("addAll");
+    if (addAll) addAll.addEventListener("click", () => { if (!WISH.length) return; WISH.forEach(p => addItem(p)); toast("تمت إضافة كل المفضلة للسلة"); });
+  }
+
+  /* ---------- Checkout page ---------- */
+  const sumItems = document.getElementById("sumItems");
+  if (sumItems) {
+    const DEMO = [{ name: "فخذ ضأن بالعظم", price: 120, qty: 1 }, { name: "لحم بقري مفروم — كيلو", price: 48, qty: 2 }, { name: "ذبيحة ضأن كاملة", price: 899, qty: 1 }];
+    const gc = id => document.getElementById(id);
+    function renderCheckout() {
+      const items = cart.length ? cart : DEMO;
+      sumItems.innerHTML = items.map(i => `<div class="sum-item"><div class="ph"></div><div class="si-b"><h5>${i.name}</h5><span class="si-q">الكمية: ${i.qty}</span></div><span class="si-p">${money(i.price * i.qty)} ر.س</span></div>`).join("");
+      const sub = items.reduce((s, i) => s + i.price * i.qty, 0);
+      const ship = sub >= 300 ? 0 : 25, vat = Math.round(sub * 0.15), total = sub + ship + vat;
+      gc("sumSub").textContent = money(sub) + " ر.س";
+      gc("sumShip").innerHTML = ship ? money(ship) + " ر.س" : '<span class="free">مجاني</span>';
+      gc("sumVat").textContent = money(vat) + " ر.س";
+      gc("sumTotal").textContent = money(total) + " ر.س";
+    }
+    renderCheckout();
+    document.querySelectorAll("[data-radio]").forEach(grp => grp.addEventListener("click", e => {
+      const o = e.target.closest(".radio-opt"); if (!o) return;
+      grp.querySelectorAll(".radio-opt").forEach(x => x.classList.remove("active")); o.classList.add("active");
+    }));
+    if (gc("couponBtn")) gc("couponBtn").addEventListener("click", () => toast("تم تطبيق الكوبون (تجريبي)"));
+    if (gc("placeOrder")) gc("placeOrder").addEventListener("click", () => toast("تم تأكيد طلبك بنجاح ✓ (تجريبي)"));
+  }
+
+  /* ---------- Account page ---------- */
+  document.querySelectorAll(".acc-menu .am[data-panel]").forEach(m => m.addEventListener("click", () => {
+    document.querySelectorAll(".acc-menu .am").forEach(x => x.classList.remove("active")); m.classList.add("active");
+    document.querySelectorAll(".acc-panel").forEach(p => p.classList.toggle("active", p.dataset.panel === m.dataset.panel));
+  }));
+
   /* ---------- Toast ---------- */
   const $toast = document.getElementById("toast"), $toastMsg = document.getElementById("toastMsg"); let tT;
   function toast(msg) { if (!$toast) return; $toastMsg.textContent = msg; $toast.classList.add("show"); clearTimeout(tT); tT = setTimeout(() => $toast.classList.remove("show"), 2400); }

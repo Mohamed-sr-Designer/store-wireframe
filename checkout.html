@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إتمام الطلب — Wireframe</title>
+<meta name="theme-color" content="#c1121f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
+</head>
+<body>
+
+<div class="util"><div class="wrap"><div class="u-l"><span class="promo">🎁 <b>300 ر.س</b> هدية عند تحميل التطبيق!</span><span>9200 00000</span></div><div class="u-r"><span>تتبّع طلبك</span><span>خدمة العملاء</span><span>حمّل التطبيق</span></div></div></div>
+
+<header class="header">
+  <div class="wrap header__row">
+    <button class="tool burger" id="burger" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg><small>القائمة</small></button>
+    <div class="brand" data-nav="index.html" aria-label="الشعار"><span class="logo-dot" title="مكان الشعار"></span></div>
+    <div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input type="text" placeholder="دوّر على منتجك… لحم ضأن، بقر، عجل، إبل، مفروم…" aria-label="بحث"><button class="go">بحث</button></div>
+    <div class="header__tools">
+      <button class="tool d-hide" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><small>حسابي</small></button>
+      <button class="tool d-hide" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><small>المفضلة</small></button>
+      <button class="tool" id="cartBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg><small>السلة</small><span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="search-m"><div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input type="text" placeholder="دوّر على منتجك…" aria-label="بحث"></div></div>
+
+<main class="wrap">
+  <div class="crumbs"><span data-nav="index.html">الرئيسية</span><span class="sep">›</span><span>السلة</span><span class="sep">›</span><span class="cur">إتمام الطلب</span></div>
+
+  <div class="page-head"><div><h1>إتمام الطلب</h1></div></div>
+
+  <div class="steps">
+    <div class="st done"><span class="n">✓</span> السلة</div><span class="line"></span>
+    <div class="st active"><span class="n">2</span> المعلومات والدفع</div><span class="line"></span>
+    <div class="st"><span class="n">3</span> تأكيد الطلب</div>
+  </div>
+
+  <div class="checkout">
+    <!-- form -->
+    <div class="co-form">
+      <div class="card-box">
+        <h3><span class="num">1</span> معلومات التواصل</h3>
+        <div class="form-grid">
+          <div class="field"><label>الاسم الكامل</label><input type="text" placeholder="مثال: محمد العتيبي"></div>
+          <div class="field"><label>رقم الجوال</label><input type="tel" placeholder="05xxxxxxxx"></div>
+        </div>
+        <div class="field"><label>البريد الإلكتروني (اختياري)</label><input type="email" placeholder="name@example.com"></div>
+      </div>
+
+      <div class="card-box">
+        <h3><span class="num">2</span> عنوان التوصيل</h3>
+        <div class="form-grid">
+          <div class="field"><label>المدينة</label><select><option>الرياض</option><option>جدة</option><option>الدمام</option><option>القصيم</option><option>مكة المكرمة</option><option>المدينة المنورة</option></select></div>
+          <div class="field"><label>الحي</label><input type="text" placeholder="مثال: حي الملقا"></div>
+        </div>
+        <div class="form-grid">
+          <div class="field"><label>الشارع</label><input type="text" placeholder="اسم الشارع"></div>
+          <div class="field"><label>رقم المبنى / الوحدة</label><input type="text" placeholder="0000"></div>
+        </div>
+        <div class="field"><label>تفاصيل إضافية</label><input type="text" placeholder="أقرب معلم، ملاحظات للمندوب…"></div>
+        <div class="field"><label>حدد موقعك على الخريطة</label><div class="ph map-ph"></div></div>
+      </div>
+
+      <div class="card-box">
+        <h3><span class="num">3</span> وقت التوصيل</h3>
+        <div data-radio>
+          <div class="radio-opt active"><span class="radio"></span><div class="txt"><b>في أقرب وقت</b><span>خلال 24–72 ساعة</span></div></div>
+          <div class="radio-opt"><span class="radio"></span><div class="txt"><b>تحديد موعد</b><span>اختر اليوم والفترة المناسبة</span></div></div>
+        </div>
+      </div>
+
+      <div class="card-box">
+        <h3><span class="num">4</span> طريقة الدفع</h3>
+        <div data-radio>
+          <div class="radio-opt active"><span class="radio"></span><span class="pm-ic"></span><div class="txt"><b>الدفع عند الاستلام</b><span>ادفع نقداً أو بالشبكة عند التوصيل</span></div></div>
+          <div class="radio-opt"><span class="radio"></span><span class="pm-ic"></span><div class="txt"><b>مدى / بطاقة بنكية</b><span>دفع آمن عبر البطاقة</span></div></div>
+          <div class="radio-opt"><span class="radio"></span><span class="pm-ic"></span><div class="txt"><b>Apple Pay</b><span>دفع سريع بلمسة</span></div></div>
+          <div class="radio-opt"><span class="radio"></span><span class="pm-ic"></span><div class="txt"><b>تمارا / تابي</b><span>قسّطها على دفعات</span></div></div>
+        </div>
+      </div>
+
+      <div class="card-box">
+        <h3><span class="num">5</span> ملاحظات الطلب</h3>
+        <div class="field"><textarea placeholder="أي تعليمات خاصة بالتقطيع أو التجهيز أو التوصيل…"></textarea></div>
+      </div>
+    </div>
+
+    <!-- summary -->
+    <aside class="summary">
+      <h3>ملخّص الطلب</h3>
+      <div class="sum-items" id="sumItems"><!-- injected --></div>
+      <div class="coupon"><input type="text" placeholder="كود الخصم"><button class="btn btn--dark btn--sm" id="couponBtn" type="button">تطبيق</button></div>
+      <div class="sum-lines">
+        <div class="sum-line"><span>المجموع الفرعي</span><span id="sumSub">0 ر.س</span></div>
+        <div class="sum-line"><span>التوصيل</span><span id="sumShip">0 ر.س</span></div>
+        <div class="sum-line"><span>ضريبة القيمة المضافة (15%)</span><span id="sumVat">0 ر.س</span></div>
+        <div class="sum-line total"><span>الإجمالي</span><b id="sumTotal">0 ر.س</b></div>
+      </div>
+      <button class="btn btn--block" id="placeOrder" type="button" style="margin-top:16px">تأكيد الطلب</button>
+      <p style="font-size:.76rem;color:var(--muted);text-align:center;margin-top:10px">بتأكيدك للطلب فإنك توافق على الشروط والأحكام وسياسة الخصوصية.</p>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer"><div class="wrap"><div class="footer__top">
+  <div class="footer__brand"><span class="logo-dot"></span><p>متجر لحوم وذبائح يوفّر أجود أنواع اللحوم الطازجة مع ضمان الجودة وأفضل خدمة توصيل.</p><div class="meta"><span>العنوان: <b>الرياض — حي الملقا</b></span><span>للطلبات: <b>9200 00000</b></span></div><div class="social"><span class="sq"></span><span class="sq"></span><span class="sq"></span><span class="sq"></span></div></div>
+  <div class="fcol"><h4>روابط مهمة</h4><ul><li><span>خدمة العملاء</span></li><li><span>الأسئلة الشائعة</span></li><li><span>سياسة الاستبدال والإرجاع</span></li><li><span>التغليف والتوصيل</span></li></ul></div>
+  <div class="fcol"><h4>تسوّق</h4><ul><li><span data-nav="category.html">لحم الضأن</span></li><li><span data-nav="category.html">لحم البقر</span></li><li><span data-nav="category.html">القطعيات والشرائح</span></li><li><span data-nav="category.html">المطبخ الجاهز</span></li></ul></div>
+  <div class="fcol"><h4>حسابي</h4><ul><li><span data-nav="account.html">لوحة الحساب</span></li><li><span>طلباتي</span></li><li><span data-nav="wishlist.html">المفضلة</span></li></ul><div class="footer__pay"><b>طرق الدفع</b><div class="row"><span class="pm"></span><span class="pm"></span><span class="pm"></span><span class="pm"></span></div></div></div>
+</div><div class="footer__bottom"><span>© جميع الحقوق محفوظة 2026</span><span>المملكة العربية السعودية · الرياض</span></div></div></footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="سلة التسوق"><div class="drawer__head"><h3><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg> سلة التسوق</h3><button class="x" id="closeCart" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="drawer__body" id="cartBody"></div><div class="drawer__foot" id="cartFoot" hidden><div class="tot"><span>الإجمالي</span><b><span id="cartTotal">0</span> ر.س</b></div><div class="ship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> توصيل مجاني للطلبات فوق 300 ر.س</div><button class="btn btn--block" type="button">إتمام الطلب</button></div></aside>
+
+<aside class="mnav" id="mnav" aria-label="القائمة"><div class="mnav__head"><span class="logo-dot"></span><button class="x" id="closeMnav" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><nav><span data-nav="category.html">العروض</span><span data-nav="category.html">الذبائح الكاملة</span><span data-nav="category.html">لحم الضأن</span><span data-nav="category.html">لحم البقر</span><span data-nav="category.html">لحم العجل</span><span data-nav="category.html">لحم الإبل</span><span data-nav="category.html">اللحم المفروم</span><span data-nav="category.html">القطعيات والشرائح</span><span data-nav="category.html">المطبخ الجاهز</span></nav><div class="mnav__foot"><button class="btn btn--block" type="button">تسجيل الدخول</button></div></aside>
+
+<nav class="tabbar" id="tabbar" aria-label="تنقّل سريع">
+  <button class="tabbar__i" data-nav="index.html" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z"/></svg><span>الرئيسية</span></button>
+  <button class="tabbar__i" data-nav="category.html" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>الأقسام</span></button>
+  <button class="tabbar__i" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><span>المفضلة</span></button>
+  <button class="tabbar__i" id="tabCart" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg><span class="tb-badge" id="tabCartBadge">0</span><span>السلة</span></button>
+  <button class="tabbar__i" id="tabMenu" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>حسابي</span></button>
+</nav>
+
+<button class="totop" id="toTop" aria-label="للأعلى" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">تمت الإضافة للسلة</span></div>
+
+<script src="assets/js/main.js?v=5"></script>
+</body>
+</html>
