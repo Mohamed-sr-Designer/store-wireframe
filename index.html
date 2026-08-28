@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=3">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
 </head>
 <body>
 
@@ -35,10 +35,10 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       <small>القائمة</small>
     </button>
-    <div class="brand" aria-label="الشعار"><span class="logo-dot" title="مكان الشعار"></span></div>
+    <div class="brand" aria-label="الشعار" data-nav="index.html"><span class="logo-dot" title="مكان الشعار"></span></div>
     <div class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-      <input type="text" placeholder="دوّر على ذبيحتك… نعيمي، حري، حاشي، مفروم…" aria-label="بحث">
+      <input type="text" placeholder="دوّر على منتجك… لحم ضأن، بقر، عجل، إبل، مفروم…" aria-label="بحث">
       <button class="go">بحث</button>
     </div>
     <div class="header__tools">
@@ -63,7 +63,7 @@
 <div class="search-m">
   <div class="search">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-    <input type="text" placeholder="دوّر على ذبيحتك…" aria-label="بحث">
+    <input type="text" placeholder="دوّر على منتجك…" aria-label="بحث">
   </div>
 </div>
 
@@ -71,14 +71,14 @@
 <nav class="catnav" aria-label="الأقسام">
   <div class="wrap">
     <span class="chip active">الكل</span>
-    <span class="chip">العروض</span>
-    <span class="chip">حاشي</span>
-    <span class="chip">عجل</span>
-    <span class="chip">بلدي ومرابي</span>
-    <span class="chip">نعيمي كشميري</span>
-    <span class="chip">سواكني محلي</span>
-    <span class="chip">مفروم</span>
-    <span class="chip">المطبخ</span>
+    <span class="chip" data-nav="category.html">العروض</span>
+    <span class="chip" data-nav="category.html">لحم الضأن</span>
+    <span class="chip" data-nav="category.html">لحم البقر</span>
+    <span class="chip" data-nav="category.html">لحم العجل</span>
+    <span class="chip" data-nav="category.html">لحم الإبل</span>
+    <span class="chip" data-nav="category.html">اللحم المفروم</span>
+    <span class="chip" data-nav="category.html">القطعيات والشرائح</span>
+    <span class="chip" data-nav="category.html">المطبخ</span>
   </div>
 </nav>
 
@@ -113,12 +113,12 @@
   <div class="wrap">
     <div class="sec-head"><div><h2>جميع الأقسام</h2><div class="sub">تصفّح كل أقسام المتجر</div></div></div>
     <div class="tiles reveal">
-      <div class="tile"><div class="ph ph--sm"></div><b>العروض</b></div>
-      <div class="tile"><div class="ph ph--sm"></div><b>حاشي</b></div>
-      <div class="tile"><div class="ph ph--sm"></div><b>عجل</b></div>
-      <div class="tile"><div class="ph ph--sm"></div><b>بلدي ومرابي</b></div>
-      <div class="tile"><div class="ph ph--sm"></div><b>نعيمي كشميري</b></div>
-      <div class="tile"><div class="ph ph--sm"></div><b>المطبخ</b></div>
+      <div class="tile" data-nav="category.html"><div class="ph ph--sm"></div><b>الذبائح الكاملة</b></div>
+      <div class="tile" data-nav="category.html"><div class="ph ph--sm"></div><b>لحم الضأن</b></div>
+      <div class="tile" data-nav="category.html"><div class="ph ph--sm"></div><b>لحم البقر</b></div>
+      <div class="tile" data-nav="category.html"><div class="ph ph--sm"></div><b>لحم العجل</b></div>
+      <div class="tile" data-nav="category.html"><div class="ph ph--sm"></div><b>لحم الإبل</b></div>
+      <div class="tile" data-nav="category.html"><div class="ph ph--sm"></div><b>المطبخ الجاهز</b></div>
     </div>
   </div>
 </section>
@@ -145,18 +145,18 @@
   </div>
 </section>
 
-<!-- ===== Shelf 1: بلدي ومرابي ===== -->
+<!-- ===== Shelf 1: whole animals ===== -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><div><h2>بلدي ومرابي</h2><div class="sub">أجود الذبائح البلدية والمرابي</div></div><span class="seeall">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
+    <div class="sec-head"><div><h2>الذبائح الكاملة</h2><div class="sub">ذبيحتك كاملة أو نصف أو ربع — مذبوحة ومجهّزة</div></div><span class="seeall" data-nav="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
     <div class="shelf reveal" id="shelf1"><!-- injected --></div>
   </div>
 </section>
 
-<!-- ===== Shelf 2: نعيمي كشميري وسواكني ===== -->
+<!-- ===== Shelf 2: cuts ===== -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><div><h2>نعيمي كشميري وسواكني</h2><div class="sub">تشكيلة مختارة بعناية</div></div><span class="seeall">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
+    <div class="sec-head"><div><h2>القطعيات والشرائح</h2><div class="sub">فخذ · كتف · ريش · شرائح · ستيك</div></div><span class="seeall" data-nav="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
     <div class="shelf reveal" id="shelf2"><!-- injected --></div>
   </div>
 </section>
@@ -184,7 +184,7 @@
       <div class="rcard">
         <div class="rcard__top"><span class="ph av"></span><div class="nm"><b>أم عبدالله</b><span>القصيم</span></div><span class="verify">✔ موثّق</span></div>
         <div class="stars"><span class="s">★★★★★</span><b>5.0</b></div>
-        <p>«طلبت بوكس نعيمي للعزيمة وكان الطعم رهيب، والكل مدحه. بأطلب منهم دايم.»</p>
+        <p>«طلبت ذبيحة ضأن كاملة للعزيمة وكان الطعم رهيب، والكل مدحه. بأطلب منهم دايم.»</p>
       </div>
       <div class="rcard">
         <div class="rcard__top"><span class="ph av"></span><div class="nm"><b>سلطان العتيبي</b><span>جدة</span></div><span class="verify">✔ موثّق</span></div>
@@ -205,7 +205,7 @@
   <div class="wrap">
     <div class="sec-head"><div><h2>من تجارب عملائنا بالفيديو</h2><div class="sub">شوف الجودة بعينك قبل ما تطلب</div></div><span class="seeall">كل الفيديوهات <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
     <div class="videos reveal">
-      <div class="vcard"><div class="ph"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">تجربة عميل — بوكس نعيمي</span></div>
+      <div class="vcard"><div class="ph"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">تجربة عميل — ذبيحة ضأن</span></div>
       <div class="vcard"><div class="ph"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">من داخل الملحمة</span></div>
       <div class="vcard"><div class="ph"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">التقطيع والتجهيز</span></div>
       <div class="vcard"><div class="ph"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">توصيل الطلب لباب البيت</span></div>
@@ -227,7 +227,7 @@
 <!-- ===== Kitchen ===== -->
 <section class="section" style="padding-top:0" id="kitchen">
   <div class="wrap">
-    <div class="sec-head"><div><h2>المطبخ</h2><div class="sub">ذبيحتك مذبوحة ومطبوخة وواصلة جاهزة</div></div><span class="seeall">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
+    <div class="sec-head"><div><h2>المطبخ</h2><div class="sub">ذبيحتك مذبوحة ومطبوخة وواصلة جاهزة</div></div><span class="seeall" data-nav="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
     <div class="tiles reveal" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px">
       <div class="tile"><div class="ph ph--sm"></div><b>الولائم</b></div>
       <div class="tile"><div class="ph ph--sm"></div><b>الإيدامات</b></div>
@@ -243,7 +243,7 @@
   <div class="wrap">
     <div class="ticker reveal" id="ticker">
       <span class="dot"></span>
-      <span class="tk-txt"><b>عميل من الرياض</b> طلب بوكس نعيمي بلدي</span>
+      <span class="tk-txt"><b>عميل من الرياض</b> طلب ذبيحة ضأن كاملة</span>
       <span class="tk-time">قبل دقيقتين</span>
     </div>
   </div>
@@ -300,12 +300,12 @@
       </div>
       <div class="fcol"><h4>تسوّق</h4>
         <ul>
-          <li><span>العروض</span></li>
-          <li><span>الذبائح البلدية</span></li>
-          <li><span>حاشي وعجل</span></li>
-          <li><span>البوكسات</span></li>
-          <li><span>المطبخ والولائم</span></li>
-          <li><span>الأكثر مبيعاً</span></li>
+          <li><span data-nav="category.html">العروض</span></li>
+          <li><span data-nav="category.html">الذبائح الكاملة</span></li>
+          <li><span data-nav="category.html">لحم الضأن والبقر</span></li>
+          <li><span data-nav="category.html">القطعيات والشرائح</span></li>
+          <li><span data-nav="category.html">اللحم المفروم</span></li>
+          <li><span data-nav="category.html">المطبخ الجاهز</span></li>
         </ul>
       </div>
       <div class="fcol"><h4>حسابي</h4>
@@ -349,15 +349,15 @@
     <button class="x" id="closeMnav" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   </div>
   <nav>
-    <span>العروض</span>
-    <span>حاشي</span>
-    <span>عجل</span>
-    <span>بلدي ومرابي</span>
-    <span>نعيمي كشميري</span>
-    <span>سواكني محلي</span>
-    <span>مفروم</span>
-    <span>المطبخ والولائم</span>
-    <span>حسابي</span>
+    <span data-nav="category.html">العروض</span>
+    <span data-nav="category.html">الذبائح الكاملة</span>
+    <span data-nav="category.html">لحم الضأن</span>
+    <span data-nav="category.html">لحم البقر</span>
+    <span data-nav="category.html">لحم العجل</span>
+    <span data-nav="category.html">لحم الإبل</span>
+    <span data-nav="category.html">اللحم المفروم</span>
+    <span data-nav="category.html">القطعيات والشرائح</span>
+    <span data-nav="category.html">المطبخ الجاهز</span>
   </nav>
   <div class="mnav__foot"><button class="btn btn--block" type="button">تسجيل الدخول</button></div>
 </aside>
@@ -377,6 +377,6 @@
 <!-- ===== Toast ===== -->
 <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">تمت الإضافة للسلة</span></div>
 
-<script src="assets/js/main.js?v=3"></script>
+<script src="assets/js/main.js?v=4"></script>
 </body>
 </html>
