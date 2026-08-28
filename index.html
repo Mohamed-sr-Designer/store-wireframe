@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>واجهة متجر إلكتروني — Wireframe (هاي فيديليتي)</title>
+<meta name="description" content="واير فريم هاي-فيديليتي لواجهة متجر إلكتروني — محتوى سعودي، بدون علامة تجارية أو صور.">
+<meta name="theme-color" content="#2f333a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=1">
+</head>
+<body>
+
+<!-- ===== Utility bar ===== -->
+<div class="util">
+  <div class="wrap">
+    <div class="u-l">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> التوصيل إلى: الرياض</span>
+      <span>🚚 توصيل مجاني للطلبات فوق 200 ر.س</span>
+      <span>الدفع عند الاستلام متوفّر</span>
+    </div>
+    <div class="u-r">
+      <span>تتبّع طلبك</span>
+      <span>خدمة العملاء</span>
+      <span>العربية</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header class="header">
+  <div class="wrap header__row">
+    <div class="brand" aria-label="الشعار">
+      <span class="logo-dot" title="مكان الشعار"></span>
+    </div>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" placeholder="وش تبي تطلب اليوم؟ دوّر على منتج أو قسم…" aria-label="بحث">
+      <button class="go">بحث</button>
+    </div>
+    <div class="header__tools">
+      <button class="tool d-hide" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <small>حسابي</small>
+      </button>
+      <button class="tool d-hide" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+        <small>المفضلة</small>
+      </button>
+      <button class="tool" id="cartBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg>
+        <small>السلة</small>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="tool burger" id="burger" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <small>القائمة</small>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- mobile search -->
+<div class="search-m">
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <input type="text" placeholder="وش تبي تطلب اليوم؟…" aria-label="بحث">
+  </div>
+</div>
+
+<!-- ===== Category nav ===== -->
+<nav class="catnav" aria-label="الأقسام">
+  <div class="wrap">
+    <span class="chip active">الكل</span>
+    <span class="chip">جوالات وإلكترونيات</span>
+    <span class="chip">الأزياء</span>
+    <span class="chip">المنزل والمطبخ</span>
+    <span class="chip">الجمال والعناية</span>
+    <span class="chip">البقالة</span>
+    <span class="chip">أطفال وألعاب</span>
+    <span class="chip">الرياضة</span>
+    <span class="chip">العروض 🔖</span>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="wrap hero__grid reveal">
+    <div class="hero__main">
+      <div class="ph ph--lg"></div>
+      <div class="in">
+        <span class="eyebrow">تخفيضات نهاية الموسم</span>
+        <h1>كل اللي تبيه… بأفضل الأسعار</h1>
+        <p>توصيل سريع لين باب البيت · دفع عند الاستلام · إرجاع سهل خلال 15 يوم.</p>
+        <button class="btn" type="button">تسوّق الحين
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="hero__side">
+      <div class="promo">
+        <div class="ph"></div>
+        <div class="in"><h3>شحن مجاني</h3><span>لكل الطلبات فوق 200 ر.س</span></div>
+      </div>
+      <div class="promo">
+        <div class="ph"></div>
+        <div class="in"><h3>خصم يصل 30%</h3><span>على تشكيلة مختارة</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Category tiles ===== -->
+<section class="section" style="padding-top:6px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>تسوّق حسب القسم</h2><div class="sub">تصفّح كل الأقسام بسهولة</div></div>
+      <span class="seeall">كل الأقسام <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    </div>
+    <div class="tiles reveal">
+      <div class="tile"><div class="ph ph--sm"></div><b>جوالات</b></div>
+      <div class="tile"><div class="ph ph--sm"></div><b>لابتوبات</b></div>
+      <div class="tile"><div class="ph ph--sm"></div><b>أزياء رجالي</b></div>
+      <div class="tile"><div class="ph ph--sm"></div><b>أزياء نسائي</b></div>
+      <div class="tile"><div class="ph ph--sm"></div><b>المنزل</b></div>
+      <div class="tile"><div class="ph ph--sm"></div><b>العناية</b></div>
+      <div class="tile"><div class="ph ph--sm"></div><b>البقالة</b></div>
+      <div class="tile"><div class="ph ph--sm"></div><b>ألعاب</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Flash deals ===== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="flash reveal">
+      <div class="flash__top">
+        <h2>⚡ عروض تنتهي خلال</h2>
+        <div class="cd" id="countdown">
+          <span class="lbl">تنتهي بعد</span>
+          <span class="u" data-cd="h">00</span><span class="sep">:</span>
+          <span class="u" data-cd="m">00</span><span class="sep">:</span>
+          <span class="u" data-cd="s">00</span>
+        </div>
+        <span class="seeall">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </div>
+      <div class="shelf" id="flashShelf"><!-- injected --></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Best sellers ===== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>الأكثر مبيعًا</h2><div class="sub">أكثر المنتجات طلبًا هالأسبوع</div></div>
+      <span class="seeall">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    </div>
+    <div class="pgrid reveal" id="bestGrid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ===== Banners 2-up ===== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="banners reveal">
+      <div class="banner">
+        <div class="ph"></div>
+        <div class="in"><span class="eyebrow">مجموعة مختارة</span><h3>بانر ترويجي</h3><button class="btn btn--sm" type="button">تسوّق المجموعة</button></div>
+      </div>
+      <div class="banner">
+        <div class="ph"></div>
+        <div class="in"><span class="eyebrow">وفّر أكثر</span><h3>بانر ترويجي</h3><button class="btn btn--sm" type="button">اكتشف العروض</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== New arrivals ===== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>وصل حديثًا</h2><div class="sub">أحدث ما نزل عندنا</div></div>
+      <span class="seeall">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+    </div>
+    <div class="pgrid reveal" id="newGrid"><!-- injected --></div>
+  </div>
+</section>
+
+<!-- ===== Trust strip ===== -->
+<section class="trust">
+  <div class="wrap trust__grid">
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h4l3 3v3a2 2 0 0 1-2 2h-1"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><div><b>توصيل سريع</b><span>خلال 24–72 ساعة</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><div><b>الدفع عند الاستلام</b><span>وطرق دفع إلكترونية</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.4 2.6L3 8"/><path d="M3 3v5h5"/></svg></span><div><b>إرجاع مجاني</b><span>خلال 15 يوم</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4L3 21l1.1-3A8.4 8.4 0 1 1 21 11.5Z"/></svg></span><div><b>دعم 24/7</b><span>خدمة عملاء على مدار الساعة</span></div></div>
+  </div>
+</section>
+
+<!-- ===== Newsletter ===== -->
+<section class="section">
+  <div class="wrap">
+    <div class="news reveal">
+      <h2>اشترك بالنشرة ويوصلك كل جديد</h2>
+      <p>كن أول من يعرف بأقوى العروض والتخفيضات قبل الكل.</p>
+      <form id="newsForm">
+        <input type="email" placeholder="بريدك الإلكتروني" required aria-label="البريد الإلكتروني">
+        <button class="btn btn--light" type="submit">اشترك</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <span class="logo-dot" title="مكان الشعار"></span>
+        <p>وصف مختصر عن المتجر يوضّح فئات المنتجات ومناطق التغطية وميزات التوصيل والدفع.</p>
+        <div class="social"><span class="sq"></span><span class="sq"></span><span class="sq"></span><span class="sq"></span></div>
+        <div class="footer__pay"><b>طرق الدفع</b><div class="row"><span class="pm"></span><span class="pm"></span><span class="pm"></span><span class="pm"></span><span class="pm"></span></div></div>
+      </div>
+      <div class="fcol">
+        <h4>خدمة العملاء</h4>
+        <ul>
+          <li><span>اتصل بنا</span></li>
+          <li><span>الأسئلة الشائعة</span></li>
+          <li><span>سياسة الإرجاع والاستبدال</span></li>
+          <li><span>الشحن والتوصيل</span></li>
+          <li><span>تتبّع الطلب</span></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>عن المتجر</h4>
+        <ul>
+          <li><span>من نحن</span></li>
+          <li><span>الوظائف</span></li>
+          <li><span>الشروط والأحكام</span></li>
+          <li><span>سياسة الخصوصية</span></li>
+          <li><span>سياسة الاستخدام</span></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>تسوّق</h4>
+        <ul>
+          <li><span>كل الأقسام</span></li>
+          <li><span>العروض والتخفيضات</span></li>
+          <li><span>الأكثر مبيعًا</span></li>
+          <li><span>وصل حديثًا</span></li>
+          <li><span>بطاقات الهدايا</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© جميع الحقوق محفوظة 2026</span>
+      <span>المملكة العربية السعودية</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== Cart drawer ===== -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="سلة التسوق">
+  <div class="drawer__head">
+    <h3><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg> سلة التسوق</h3>
+    <button class="x" id="closeCart" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="drawer__body" id="cartBody"></div>
+  <div class="drawer__foot" id="cartFoot" hidden>
+    <div class="tot"><span>الإجمالي</span><b><span id="cartTotal">0</span> ر.س</b></div>
+    <div class="ship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> شحن مجاني للطلبات فوق 200 ر.س</div>
+    <button class="btn btn--block" type="button">إتمام الطلب</button>
+  </div>
+</aside>
+
+<!-- ===== Mobile nav ===== -->
+<aside class="mnav" id="mnav" aria-label="القائمة">
+  <div class="mnav__head">
+    <span class="logo-dot" title="مكان الشعار"></span>
+    <button class="x" id="closeMnav" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <nav>
+    <span>كل الأقسام</span>
+    <span>جوالات وإلكترونيات</span>
+    <span>الأزياء</span>
+    <span>المنزل والمطبخ</span>
+    <span>الجمال والعناية</span>
+    <span>البقالة</span>
+    <span>العروض والتخفيضات</span>
+    <span>حسابي</span>
+  </nav>
+  <div class="mnav__foot">
+    <button class="btn btn--block" type="button">تسجيل الدخول</button>
+  </div>
+</aside>
+
+<!-- ===== Bottom tab bar ===== -->
+<nav class="tabbar" id="tabbar" aria-label="تنقّل سريع">
+  <button class="tabbar__i active" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z"/></svg>
+    <span>الرئيسية</span>
+  </button>
+  <button class="tabbar__i" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+    <span>الأقسام</span>
+  </button>
+  <button class="tabbar__i" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
+    <span>المفضلة</span>
+  </button>
+  <button class="tabbar__i" id="tabCart" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg>
+    <span class="tb-badge" id="tabCartBadge">0</span>
+    <span>السلة</span>
+  </button>
+  <button class="tabbar__i" id="tabMenu" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+    <span>حسابي</span>
+  </button>
+</nav>
+
+<!-- ===== Back to top ===== -->
+<button class="totop" id="toTop" aria-label="للأعلى" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+
+<!-- ===== Toast ===== -->
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">تمت الإضافة للسلة</span></div>
+
+<script src="assets/js/main.js?v=1"></script>
+</body>
+</html>
