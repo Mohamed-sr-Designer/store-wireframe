@@ -191,7 +191,8 @@ ul{margin:0;padding:0;list-style:none}
 .fbanner{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);min-height:150px;display:flex;align-items:center}
 .fbanner .ph{position:absolute;inset:0}
 .fbanner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,34,40,.42),transparent)}
-.fbanner .in{position:relative;z-index:2;padding:26px;color:#fff}
+.fbanner .in{position:relative;z-index:2;padding:20px 24px;color:#fff;background:rgba(18,20,24,.64);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-radius:16px;margin:18px;max-width:min(64%,500px)}
+.fbanner .in p{color:#eaecf0;font-size:.88rem;margin-bottom:.9rem}
 .fbanner .in .eyebrow{color:#ffd7d9}
 .fbanner .in .eyebrow::before{background:#ffd7d9}
 .fbanner h3{color:#fff;font-size:1.4rem;font-weight:800;margin:.3rem 0 .8rem}
@@ -208,7 +209,7 @@ ul{margin:0;padding:0;list-style:none}
 .banner{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);min-height:170px;display:flex;align-items:center}
 .banner .ph{position:absolute;inset:0}
 .banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,34,40,.4),transparent)}
-.banner .in{position:relative;z-index:2;padding:24px;color:#fff}
+.banner .in{position:relative;z-index:2;padding:18px 22px;color:#fff;background:rgba(18,20,24,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border-radius:16px;margin:16px;max-width:min(72%,380px)}
 .banner .in .eyebrow{color:#ffd7d9}
 .banner .in .eyebrow::before{background:#ffd7d9}
 .banner h3{color:#fff;font-size:1.3rem;font-weight:800;margin:.4rem 0 .8rem}

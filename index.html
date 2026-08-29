@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=6">
+<link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 <body>
 
@@ -108,6 +108,16 @@
   </div>
 </section>
 
+<!-- ===== Trust strip (under hero) ===== -->
+<section class="trust">
+  <div class="wrap trust__grid">
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h4l3 3v3a2 2 0 0 1-2 2h-1"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><div><b>توصيل مبرّد سريع</b><span>يحفظ اللحم طازج</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>ذبح حلال</b><span>إشراف شرعي كامل</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M6 3h12M9 21h6M12 15v6"/></svg></span><div><b>تقطيع وتجهيز مجاني</b><span>حسب طلبك</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><div><b>الدفع عند الاستلام</b><span>وطرق دفع إلكترونية</span></div></div>
+  </div>
+</section>
+
 <!-- ===== All categories ===== -->
 <section class="section" style="padding-top:6px">
   <div class="wrap">
@@ -140,7 +150,7 @@
   <div class="wrap">
     <div class="fbanner reveal">
       <div class="ph"><img class="imgfill" src="assets/img/banner-2.webp" alt="بوكسات العائلة" loading="lazy"></div>
-      <div class="in"><span class="eyebrow">بوكسات العائلة</span><h3>بانر ترويجي — وفّر أكثر مع البوكسات الكبيرة</h3><button class="btn btn--sm btn--light" type="button">تسوّق البوكسات</button></div>
+      <div class="in"><span class="eyebrow">بوكسات العائلة</span><h3>وفّر أكثر مع البوكسات الكبيرة</h3><p>تشكيلة لحوم مشكّلة تكفي العائلة بسعر أوفر</p><button class="btn btn--sm btn--light" type="button">تسوّق البوكسات</button></div>
     </div>
   </div>
 </section>
@@ -158,16 +168,6 @@
   <div class="wrap">
     <div class="sec-head"><div><h2>القطعيات والشرائح</h2><div class="sub">فخذ · كتف · ريش · شرائح · ستيك</div></div><span class="seeall" data-nav="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
     <div class="shelf reveal" id="shelf2"><!-- injected --></div>
-  </div>
-</section>
-
-<!-- ===== Stats ===== -->
-<section class="stats">
-  <div class="wrap stats__grid reveal">
-    <div class="stat"><b>+50 ألف</b><span>عميل يثق فينا</span></div>
-    <div class="stat"><b>+120 ألف</b><span>طلب تم توصيله</span></div>
-    <div class="stat"><b>+12 سنة</b><span>خبرة في اللحوم</span></div>
-    <div class="stat"><b>13 منطقة</b><span>تغطية التوصيل</span></div>
   </div>
 </section>
 
@@ -224,20 +224,6 @@
   </div>
 </section>
 
-<!-- ===== Kitchen ===== -->
-<section class="section" style="padding-top:0" id="kitchen">
-  <div class="wrap">
-    <div class="sec-head"><div><h2>المطبخ</h2><div class="sub">ذبيحتك مذبوحة ومطبوخة وواصلة جاهزة</div></div><span class="seeall" data-nav="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
-    <div class="tiles reveal" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px">
-      <div class="tile"><div class="ph ph--sm"><img class="imgfill" src="assets/img/cat-boxes.jpg" alt="الولائم" loading="lazy"></div><b>الولائم</b></div>
-      <div class="tile"><div class="ph ph--sm"><img class="imgfill" src="assets/img/cat-grill.png" alt="الإيدامات" loading="lazy"></div><b>الإيدامات</b></div>
-      <div class="tile"><div class="ph ph--sm"><img class="imgfill" src="assets/img/p-carrot.jpg" alt="السلطات" loading="lazy"></div><b>السلطات</b></div>
-      <div class="tile"><div class="ph ph--sm"><img class="imgfill" src="assets/img/p-cream.jpg" alt="الحلا" loading="lazy"></div><b>الحلا</b></div>
-    </div>
-    <div class="shelf reveal" id="kitchenShelf"><!-- injected --></div>
-  </div>
-</section>
-
 <!-- ===== Live purchase ticker ===== -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
@@ -246,16 +232,6 @@
       <span class="tk-txt"><b>عميل من الرياض</b> طلب ذبيحة ضأن كاملة</span>
       <span class="tk-time">قبل دقيقتين</span>
     </div>
-  </div>
-</section>
-
-<!-- ===== Trust strip ===== -->
-<section class="trust">
-  <div class="wrap trust__grid">
-    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h4l3 3v3a2 2 0 0 1-2 2h-1"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><div><b>توصيل مبرّد سريع</b><span>يحفظ اللحم طازج</span></div></div>
-    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>ذبح حلال</b><span>إشراف شرعي كامل</span></div></div>
-    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M6 3h12M9 21h6M12 15v6"/></svg></span><div><b>تقطيع وتجهيز مجاني</b><span>حسب طلبك</span></div></div>
-    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><div><b>الدفع عند الاستلام</b><span>وطرق دفع إلكترونية</span></div></div>
   </div>
 </section>
 
@@ -377,6 +353,6 @@
 <!-- ===== Toast ===== -->
 <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">تمت الإضافة للسلة</span></div>
 
-<script src="assets/js/main.js?v=6"></script>
+<script src="assets/js/main.js?v=7"></script>
 </body>
 </html>
