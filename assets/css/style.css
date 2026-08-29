@@ -46,11 +46,14 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 ul{margin:0;padding:0;list-style:none}
 :focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:6px}
 
-/* ---------- Placeholder ---------- */
+/* ---------- Placeholder / real image ---------- */
 .ph{position:relative;background-color:var(--ph);background-image:var(--ph-ico);background-repeat:no-repeat;background-position:center;background-size:40px;overflow:hidden}
 .ph--sm{background-size:26px}
 .ph--lg{background-size:64px}
-.ph::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 46%,rgba(170,176,185,.16) 47%,rgba(170,176,185,.16) 53%,transparent 54%);opacity:.5}
+.ph:not(:has(img))::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 46%,rgba(170,176,185,.16) 47%,rgba(170,176,185,.16) 53%,transparent 54%);opacity:.5}
+/* real images fill their container */
+.imgfill{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pcard__media img.imgfill{z-index:1}
 
 /* ---------- Layout ---------- */
 .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:clamp(14px,3.5vw,34px)}

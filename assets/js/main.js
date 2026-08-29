@@ -68,6 +68,23 @@
     P("kt5", "كبسة لحم جاهزة", "الأطباق", 180, 240),
     P("kt6", "مظبي ضأن", "الأطباق", 260, 330)
   ];
+  // assign real food images (turkidabayeh) per meat type, cycling for variety
+  const POOLS = {
+    "ضأن": ["p-naimi.jpg", "p-harri.jpg", "p-najdi.jpg", "p-tais.jpg", "p-half-naimi.jpg", "p-half-harri.jpg", "p-harri-kilo.jpg"],
+    "بقر": ["p-veal-half.jpg", "p-veal-quarter.jpg", "p-veal-full.jpg"],
+    "عجل": ["p-veal-full.jpg", "p-veal-half.jpg", "p-veal-quarter.jpg", "p-veal-trotters.jpg"],
+    "إبل": ["p-hashi-full.jpg", "p-hashi-half.jpg", "p-hashi-kilo.jpg", "p-hashi-quarter.jpg"],
+    "مفروم": ["p-mince-lamb.jpg", "p-mince-veal.jpg", "p-mince-hashi.jpg"],
+    "الذبائح": ["p-naimi.jpg", "p-veal-full.jpg", "p-hashi-full.jpg", "p-half-naimi.jpg"],
+    "بوكس": ["cat-boxes.jpg", "cat-grill.png", "cat-mince.png"],
+    "مشاوي": ["cat-grill.png", "cat-boxes.jpg"],
+    "المطبخ": ["cat-grill.png", "cat-boxes.jpg", "p-naimi.jpg"], "الولائم": ["p-naimi.jpg", "cat-boxes.jpg"], "الإيدامات": ["cat-grill.png", "p-hashi-full.jpg"], "الأطباق": ["cat-boxes.jpg", "cat-grill.png"],
+    "كبدة": ["p-liver-lamb.jpg", "p-liver-veal.jpg", "p-liver-hashi.jpg"], "القطعيات": ["p-liver-lamb.jpg", "p-harri.jpg"], "طازج": ["p-liver-lamb.jpg", "p-liver-veal.jpg"]
+  };
+  const DEF = ["p-harri.jpg", "p-veal-half.jpg", "p-hashi-full.jpg", "p-mince-lamb.jpg", "p-naimi.jpg"];
+  function imgFor(cat, i) { let pool = DEF; for (const k in POOLS) { if (cat && cat.indexOf(k) > -1) { pool = POOLS[k]; break; } } return "assets/img/" + pool[i % pool.length]; }
+  [BEST, DISC, OFFERS, WHOLE, CUTS, KITCHEN].forEach(l => l.forEach((p, i) => { p.img = imgFor(p.cat, i); }));
+
   const SHOP = [...BEST.slice(0, 5), ...CUTS, ...WHOLE.slice(0, 4), ...DISC.slice(0, 5)].map((p, i) => ({ ...p, id: "sh" + i }));
   const RELATED = [...CUTS.slice(0, 3), ...BEST.slice(0, 3)].map((p, i) => ({ ...p, id: "rel" + i }));
 
@@ -78,6 +95,7 @@
     const badges = p.off ? `<span class="tag-off">%${p.off}-</span>` : "";
     return `<article class="pcard" data-nav="product.html">
       <div class="pcard__media">
+        ${p.img ? `<img class="imgfill" src="${p.img}" alt="${p.name}" loading="lazy">` : ""}
         <div class="pcard__badges">${badges}</div>
         <button class="wish" type="button" aria-label="المفضلة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></button>
       </div>
@@ -87,7 +105,7 @@
         ${stars(p.rating, p.reviews)}
         <div class="pcard__foot">
           <div class="price${p.old ? " sale" : ""}">${money(p.price)}<span class="cur">ر.س</span>${p.old ? `<del>${money(p.old)}</del>` : ""}</div>
-          <button class="add" type="button" aria-label="أضف للسلة" data-add data-id="${p.id}" data-name="${p.name}" data-price="${p.price}">
+          <button class="add" type="button" aria-label="أضف للسلة" data-add data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-img="${p.img || ""}">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
           </button>
         </div>
@@ -146,7 +164,7 @@
   const pAdd = document.getElementById("pAdd");
   if (pAdd) pAdd.addEventListener("click", () => {
     const q = qv ? +qv.textContent : 1;
-    addItem({ id: pAdd.dataset.id, name: pAdd.dataset.name, price: pAdd.dataset.price }, q);
+    addItem({ id: pAdd.dataset.id, name: pAdd.dataset.name, price: pAdd.dataset.price, img: pAdd.dataset.img }, q);
   });
   // detail tabs
   document.querySelectorAll(".dtabs .dtab").forEach(t => t.addEventListener("click", () => {
@@ -175,7 +193,7 @@
     qty = qty || 1;
     const f = cart.find(i => i.id === d.id);
     if (f) f.qty += qty;
-    else cart.push({ id: d.id, name: d.name, price: parseFloat(d.price), qty });
+    else cart.push({ id: d.id, name: d.name, price: parseFloat(d.price), qty, img: d.img || "" });
     save(); renderCart(); bump(); toast(`تمت إضافة «${d.name}» للسلة`);
   }
   function changeQty(id, dl) { const it = cart.find(i => i.id === id); if (!it) return; it.qty += dl; if (it.qty <= 0) cart = cart.filter(i => i.id !== id); save(); renderCart(); }
@@ -193,7 +211,7 @@
       const ks = document.getElementById("keepShopping"); if (ks) ks.addEventListener("click", closeDrawer);
       return;
     }
-    $body.innerHTML = cart.map(i => `<div class="citem"><div class="ph"></div><div class="ci-b"><h5>${i.name}</h5><div class="ci-p">${money(i.price * i.qty)} ر.س</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><div class="qty"><button data-dec="${i.id}" type="button">−</button><span>${i.qty}</span><button data-inc="${i.id}" type="button">+</button></div><button class="ci-x" data-rm="${i.id}" type="button">إزالة</button></div></div></div>`).join("");
+    $body.innerHTML = cart.map(i => `<div class="citem"><div class="ph">${i.img ? `<img class="imgfill" src="${i.img}">` : ""}</div><div class="ci-b"><h5>${i.name}</h5><div class="ci-p">${money(i.price * i.qty)} ر.س</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><div class="qty"><button data-dec="${i.id}" type="button">−</button><span>${i.qty}</span><button data-inc="${i.id}" type="button">+</button></div><button class="ci-x" data-rm="${i.id}" type="button">إزالة</button></div></div></div>`).join("");
     if ($total) $total.textContent = money(cart.reduce((s, i) => s + i.price * i.qty, 0));
     if ($foot) $foot.hidden = false;
   }
@@ -265,11 +283,11 @@
   /* ---------- Checkout page ---------- */
   const sumItems = document.getElementById("sumItems");
   if (sumItems) {
-    const DEMO = [{ name: "فخذ ضأن بالعظم", price: 120, qty: 1 }, { name: "لحم بقري مفروم — كيلو", price: 48, qty: 2 }, { name: "ذبيحة ضأن كاملة", price: 899, qty: 1 }];
+    const DEMO = [{ name: "فخذ ضأن بالعظم", price: 120, qty: 1, img: "assets/img/p-harri.jpg" }, { name: "لحم بقري مفروم — كيلو", price: 48, qty: 2, img: "assets/img/p-mince-veal.jpg" }, { name: "ذبيحة ضأن كاملة", price: 899, qty: 1, img: "assets/img/p-naimi.jpg" }];
     const gc = id => document.getElementById(id);
     function renderCheckout() {
       const items = cart.length ? cart : DEMO;
-      sumItems.innerHTML = items.map(i => `<div class="sum-item"><div class="ph"></div><div class="si-b"><h5>${i.name}</h5><span class="si-q">الكمية: ${i.qty}</span></div><span class="si-p">${money(i.price * i.qty)} ر.س</span></div>`).join("");
+      sumItems.innerHTML = items.map(i => `<div class="sum-item"><div class="ph">${i.img ? `<img class="imgfill" src="${i.img}">` : ""}</div><div class="si-b"><h5>${i.name}</h5><span class="si-q">الكمية: ${i.qty}</span></div><span class="si-p">${money(i.price * i.qty)} ر.س</span></div>`).join("");
       const sub = items.reduce((s, i) => s + i.price * i.qty, 0);
       const ship = sub >= 300 ? 0 : 25, vat = Math.round(sub * 0.15), total = sub + ship + vat;
       gc("sumSub").textContent = money(sub) + " ر.س";
