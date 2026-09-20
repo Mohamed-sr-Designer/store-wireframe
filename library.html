@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>المتجر — كل القطعيات · ترخيم</title>
-<meta name="description" content="الفهرس التجاري لترخيم: كل القطعيات جاهزة للطلب، مصفّاة حسب نوع اللحم والمنطقة وطريقة الطبخ والقوام.">
+<title>المكتبة — ترخيم</title>
+<meta name="description" content="مكتبة ترخيم: أدلة اختيار القطع، تقنيات الطبخ، مرجع الحرارات، وكم لحم تحتاج للعزيمة.">
 <meta name="theme-color" content="#6B1D24">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,8 @@
       <a href="cuts.html">دليل القطعيات</a>
       <a href="dish.html?d=kabsa">وش تطبخ</a>
       <a href="cook.html">مختبر الطبخ</a>
-      <a href="library.html">المكتبة</a>
-      <a href="category.html" class="is-on">المتجر</a>
+      <a href="library.html" class="is-on">المكتبة</a>
+      <a href="category.html">المتجر</a>
     </nav>
     <div class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
@@ -42,46 +42,35 @@
 <div class="search-m"><div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input type="text" placeholder="ابحث عن قطعة…" aria-label="بحث"></div></div>
 
 <main class="wrap">
-  <div class="crumbs"><a href="index.html">الرئيسية</a><span class="sep">›</span><span class="cur">المتجر</span></div>
+  <div class="crumbs"><a href="index.html">الرئيسية</a><span class="sep">›</span><span class="cur">المكتبة</span></div>
   <div class="page-head"><div>
-    <span class="eyebrow">الفهرس التجاري</span>
-    <h1>كل القطعيات — جاهزة للطلب</h1>
-    <div class="cnt">صفّ حسب نوع اللحم أو المنطقة أو طريقة الطبخ. كل قطعة لها صفحة مرجع كاملة.</div>
+    <span class="eyebrow">المكتبة</span>
+    <h1>أسئلة اللحم — مجاب عنها</h1>
+    <div class="cnt">أدلة مبنية على أسئلة حقيقية يبحث عنها الناس قبل الشراء.</div>
   </div></div>
 
-  <div class="shop">
-    <aside class="filter" id="filter">
-      <h4>تصفية</h4>
-      <div class="fgroup"><h5>نوع اللحم</h5><div id="fAnimal"></div></div>
-      <div class="fgroup"><h5>المنطقة</h5><div id="fZone"></div></div>
-      <div class="fgroup"><h5>طريقة الطبخ</h5><div id="fMethod"></div></div>
-      <div class="fgroup"><h5>القوام</h5>
-        <div class="fopt" data-trait="tender"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> طراوة عالية</div>
-        <div class="fopt" data-trait="fat"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> دهن مرتفع</div>
-        <div class="fopt" data-trait="easy"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> سهلة التحضير</div>
-      </div>
-      <button class="btn btn--ghost btn--sm btn--block" id="clearF" type="button" style="margin-top:14px">مسح التصفية</button>
-    </aside>
-
-    <div>
-      <div class="shop-toolbar">
-        <button class="filter-toggle" id="filterToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M7 12h10M10 18h4"/></svg> التصفية</button>
-        <span class="res"><b id="resCount">0</b> قطعية</span>
-        <select id="catSort" aria-label="ترتيب">
-          <option value="code">حسب الكود</option>
-          <option value="low">السعر: من الأقل</option>
-          <option value="high">السعر: من الأعلى</option>
-          <option value="tender">الأطرى أولاً</option>
-          <option value="bold">الأقوى نكهة</option>
-        </select>
-      </div>
-      <div class="pgrid" id="shopGrid"></div>
-      <div class="empty" id="shopEmpty" hidden>
-        <h3>لا توجد قطعية تطابق التصفية</h3>
-        <p>جرّب توسيع الخيارات أو امسح التصفية.</p>
-      </div>
+  <section class="section" style="padding-top:8px">
+    <div class="sec-head"><div><span class="eyebrow">اختيار القطعة</span><h2>أي قطعة أشتري؟</h2></div></div>
+    <div class="lib-grid">
+      <a class="lib-card" href="dish.html?d=kabsa"><span class="k">دليل</span><h3>أي قطعة تنفع للكبسة؟</h3><p>الفرق بين الفخذ والكتف في المرق والمنظر، وكم كيلو تحتاج لعدد ضيوفك.</p><span class="rd">اقرأ ←</span></a>
+      <a class="lib-card" href="dish.html?d=mandi"><span class="k">دليل</span><h3>أفضل قطعة للمندي</h3><p>لماذا يتفوّق الكتف على الفخذ في الطبخ الطويل المغلق، وما الذي يجعله لا يجف.</p><span class="rd">اقرأ ←</span></a>
+      <a class="lib-card" href="cut.html?c=beef-ribeye"><span class="k">مقارنة</span><h3>الريب آي أم التندرلوين؟</h3><p>واحد يُطبخ للنكهة والآخر للقوام — ولماذا يختلف السعر بينهما كل هذا الاختلاف.</p><span class="rd">اقرأ ←</span></a>
     </div>
-  </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="sec-head"><div><span class="eyebrow">التقنية</span><h2>لماذا يتصرف اللحم هكذا؟</h2></div></div>
+    <div class="lib-grid">
+      <a class="lib-card" href="cut.html?c=lamb-shank"><span class="k">تقنية</span><h3>لماذا تحتاج الموزة ثلاث ساعات؟</h3><p>الكولاجين لا يذوب بالحرارة العالية بل بالزمن — ماذا يحدث داخل القطعة ساعة بساعة.</p><span class="rd">اقرأ ←</span></a>
+      <a class="lib-card" href="cook.html"><span class="k">مرجع</span><h3>درجات النضج بالأرقام</h3><p>من 50° إلى 71°: ماذا يعني كل رقم داخل اللحم، ولماذا ترتفع الحرارة بعد رفعه عن النار.</p><span class="rd">اقرأ ←</span></a>
+      <a class="lib-card" href="cook.html"><span class="k">مرجع</span><h3>كم لحم للشخص الواحد؟</h3><p>أرقام تخطيط عملية للعزائم: بالعظم، منزوع العظم، ستيك، ومفروم.</p><span class="rd">اقرأ ←</span></a>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="sec-head"><div><span class="eyebrow">ابدأ من الطبخة</span><h2>كل الطبخات</h2></div></div>
+    <div class="dish-grid" id="allDishes"></div>
+  </section>
 </main>
 
 <footer class="footer"><div class="wrap"><div class="footer__top">
@@ -116,6 +105,6 @@
 
 <script src="assets/js/main.js?v=10"></script>
 <script src="assets/js/cuts-data.js?v=2"></script>
-<script src="assets/js/shop.js?v=1"></script>
+<script src="assets/js/library.js?v=1"></script>
 </body>
 </html>

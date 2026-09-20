@@ -9,7 +9,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Kufi+Arabic:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=9">
+<link rel="stylesheet" href="assets/css/style.css?v=10">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Organization","@id":"#org","name":"ترخيم","alternateName":"TARKHEEM",
+  "description":"مرجع اللحوم: نشرح القطعة ومن أين تأتي وكيف تُطبخ — ثم نبيعها.",
+  "areaServed":{"@type":"Country","name":"السعودية"}},
+ {"@type":"WebSite","@id":"#site","name":"ترخيم","inLanguage":"ar-SA","publisher":{"@id":"#org"}}
+]}
+</script>
 </head>
 <body>
 
@@ -24,7 +32,9 @@
     <a class="brand" href="index.html" aria-label="ترخيم — الرئيسية"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></a>
     <nav class="nav" aria-label="التنقل الرئيسي">
       <a href="cuts.html">دليل القطعيات</a>
-      <a href="#cook">مختبر الطبخ</a>
+      <a href="dish.html?d=kabsa">وش تطبخ</a>
+      <a href="cook.html">مختبر الطبخ</a>
+      <a href="library.html">المكتبة</a>
       <a href="category.html">المتجر</a>
     </nav>
     <div class="search">
@@ -99,12 +109,12 @@
         <div class="sub">قول لنا الطبخة ونقول لك القطعة المناسبة — بدل ما تدوّر في كتالوج.</div></div>
     </div>
     <div class="dish-grid reveal">
-      <a class="dish" href="cuts.html#leg"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h16M6 18c0-5 2.7-8 6-8s6 3 6 8"/><path d="M12 10V6M9 6h6"/></svg></span><b>كبسة</b><span>فخذ · كتف</span></a>
-      <a class="dish" href="cuts.html#shoulder"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M5 12a7 7 0 0 1 14 0M8 19h8"/><path d="M12 19v-3"/></svg></span><b>مندي</b><span>كتف · فخذ</span></a>
-      <a class="dish" href="cuts.html#rack"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.7 7-6.5 0-4-3-6-4-9-1.6 1.6-2 3-2 4.5C11 9 9 6.5 9 4.5 7 7 5 9.5 5 15.5 5 19.3 8 22 12 22Z"/></svg></span><b>مشاوي</b><span>ريش · أوصال</span></a>
-      <a class="dish" href="cuts.html#loin"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h11a4 4 0 0 1 0 8H8a5 5 0 0 1-5-5z"/><path d="M14 12 21 5"/></svg></span><b>ستيك</b><span>ريب آي · خاصرة</span></a>
-      <a class="dish" href="cuts.html#shank"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>طبخ بطيء</b><span>موزة · رقبة</span></a>
-      <a class="dish" href="cut.html?c=beef-neck"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M5 8c1-2 3-3 7-3s6 1 7 3M6 18h12"/></svg></span><b>برجر</b><span>مفروم 20٪</span></a>
+      <a class="dish" href="dish.html?d=kabsa"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h16M6 18c0-5 2.7-8 6-8s6 3 6 8"/><path d="M12 10V6M9 6h6"/></svg></span><b>كبسة</b><span>فخذ · كتف</span></a>
+      <a class="dish" href="dish.html?d=mandi"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M5 12a7 7 0 0 1 14 0M8 19h8"/><path d="M12 19v-3"/></svg></span><b>مندي</b><span>كتف · فخذ</span></a>
+      <a class="dish" href="dish.html?d=mashawi"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.7 7-6.5 0-4-3-6-4-9-1.6 1.6-2 3-2 4.5C11 9 9 6.5 9 4.5 7 7 5 9.5 5 15.5 5 19.3 8 22 12 22Z"/></svg></span><b>مشاوي</b><span>ريش · أوصال</span></a>
+      <a class="dish" href="dish.html?d=steak"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h11a4 4 0 0 1 0 8H8a5 5 0 0 1-5-5z"/><path d="M14 12 21 5"/></svg></span><b>ستيك</b><span>ريب آي · خاصرة</span></a>
+      <a class="dish" href="dish.html?d=slow"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>طبخ بطيء</b><span>موزة · رقبة</span></a>
+      <a class="dish" href="dish.html?d=burger"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M5 8c1-2 3-3 7-3s6 1 7 3M6 18h12"/></svg></span><b>برجر</b><span>مفروم 20٪</span></a>
     </div>
   </div>
 </section>
@@ -226,8 +236,8 @@
 <button class="totop" id="toTop" aria-label="للأعلى" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
 <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">تمت الإضافة للسلة</span></div>
 
-<script src="assets/js/main.js?v=9"></script>
-<script src="assets/js/cuts-data.js?v=1"></script>
+<script src="assets/js/main.js?v=10"></script>
+<script src="assets/js/cuts-data.js?v=2"></script>
 <script src="assets/js/home.js?v=1"></script>
 </body>
 </html>
