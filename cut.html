@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pTitle">القطعة — ترخيم</title>
+<meta name="description" id="pDesc" content="تعرّف على القطعة: من أين تأتي، وقوامها، ونسبة دهنها، وأفضل طريقة وحرارة لطبخها — من ترخيم.">
+<meta name="theme-color" content="#6B1D24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Kufi+Arabic:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=9">
+</head>
+<body>
+
+<div class="util"><div class="wrap"><div class="u-l"><span class="promo">🎁 <b>300 ر.س</b> هدية عند تحميل التطبيق!</span><span>9200 00000</span></div><div class="u-r"><span>تتبّع طلبك</span><span>خدمة العملاء</span><span>حمّل التطبيق</span></div></div></div>
+
+<header class="header">
+  <div class="wrap header__row">
+    <button class="tool burger" id="burger" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg><small>القائمة</small></button>
+    <a class="brand" href="index.html" aria-label="ترخيم — الرئيسية"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></a>
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <a href="cuts.html" class="is-on">دليل القطعيات</a>
+      <a href="category.html">المتجر</a>
+    </nav>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+      <input type="text" placeholder="ابحث عن قطعة…" aria-label="بحث"><button class="go">بحث</button>
+    </div>
+    <div class="header__tools">
+      <a class="tool d-hide" href="account.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><small>حسابي</small></a>
+      <a class="tool d-hide" href="wishlist.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><small>المفضلة</small></a>
+      <button class="tool" id="cartBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg><small>السلة</small><span class="cart-count" id="cartCount">0</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="search-m"><div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input type="text" placeholder="ابحث عن قطعة…" aria-label="بحث"></div></div>
+
+<main class="wrap" id="cutMain">
+  <div class="crumbs"><a href="index.html">الرئيسية</a><span class="sep">›</span><a href="cuts.html">دليل القطعيات</a><span class="sep">›</span><span class="cur" id="crumbCut">—</span></div>
+
+  <!-- ===== 01 · THE CUT ===== -->
+  <div class="cut-hero">
+    <div class="cut-hero__img" id="cutImg"></div>
+    <div class="cut-hero__in">
+      <span class="cut-code"><b id="cutCode">—</b></span>
+      <h1 id="cutName">—</h1>
+      <span class="en" id="cutEn">—</span>
+      <p class="why" id="cutWhy">—</p>
+    </div>
+  </div>
+
+  <div class="cut-grid">
+    <div>
+      <!-- 02 · من أين تأتي -->
+      <section class="cut-block">
+        <span class="sub">01 — المنشأ</span>
+        <h2>من أين تأتي هذه القطعة؟</h2>
+        <div class="locator" style="margin:16px 0">
+          <svg viewBox="0 0 820 470" id="locSvg" aria-hidden="true">
+            <path class="lz" data-z="leg" d="M262,150 L262,312 L186,312 C140,310 112,282 112,240 C112,196 136,166 178,157 Z"/>
+            <path class="lz" data-z="loin" d="M262,150 L380,147 L380,264 L262,264 Z"/>
+            <path class="lz" data-z="rack" d="M380,147 L500,150 L500,264 L380,264 Z"/>
+            <path class="lz" data-z="shoulder" d="M500,150 L622,162 L622,264 L500,264 Z"/>
+            <path class="lz" data-z="neck" d="M622,160 L702,126 L720,168 L640,204 L622,200 Z"/>
+            <path class="lz" data-z="breast" d="M290,264 L622,264 L622,312 L318,312 C300,312 290,300 290,286 Z"/>
+            <path class="lz" data-z="shank" d="M190,312 L236,312 L232,372 L246,414 L212,420 L194,376 Z"/>
+            <path class="lz" data-z="shank" d="M524,312 L570,312 L566,372 L580,414 L546,420 L528,376 Z"/>
+            <path class="map-outline" d="M700,126 C726,110 762,108 782,122 C796,132 793,152 779,160 L742,175 L706,168 Z"/>
+          </svg>
+          <span><span class="lt" id="locAnimal">—</span><b id="locPrimal">—</b></span>
+        </div>
+        <p id="cutOrigin">—</p>
+      </section>
+
+      <!-- 03 · المواصفات -->
+      <section class="cut-block">
+        <span class="sub">02 — ورقة المواصفات</span>
+        <h2>قوام القطعة</h2>
+        <div id="cutSpec" style="max-width:420px;margin-top:14px"></div>
+      </section>
+
+      <!-- 04 · أفضل لـ -->
+      <section class="cut-block">
+        <span class="sub">03 — الاستخدام</span>
+        <h2>أفضل لـ</h2>
+        <div class="chips-row" id="cutBest" style="margin-top:14px"></div>
+      </section>
+
+      <!-- 05 · الطبخ -->
+      <section class="cut-block">
+        <span class="sub">04 — الطبخ</span>
+        <h2>كيف تُطبخ</h2>
+        <div class="method-grid" id="cutMethods" style="margin-top:16px"></div>
+      </section>
+
+      <!-- 06 · درجة النضج -->
+      <section class="cut-block" id="donenessBlock" hidden>
+        <span class="sub">05 — درجة النضج</span>
+        <h2>حرارة القلب</h2>
+        <div class="ruler" style="margin-top:16px">
+          <div class="ruler__read"><span class="n" id="dName">—</span><span class="t" id="dTemp">—</span></div>
+          <div class="ruler__scale"><span class="ruler__pin" id="dPin" data-t=""></span></div>
+          <div class="ruler__steps" id="dSteps"></div>
+          <p style="font-family:var(--f-mono);font-size:.66rem;color:var(--muted);margin-top:14px" id="dRest"></p>
+        </div>
+      </section>
+
+      <!-- 07 · نصيحة -->
+      <section class="cut-block">
+        <div class="tipbox"><span class="k">نصيحة الجزّار</span><p id="cutTip">—</p></div>
+      </section>
+    </div>
+
+    <!-- ===== BUY ===== -->
+    <aside>
+      <div class="buybox">
+        <span class="k">احصل على هذه القطعة</span>
+        <h3 id="buyName">—</h3>
+        <div class="bprice"><span class="now" id="buyPrice">—</span><del id="buyOld"></del></div>
+        <div class="bw" id="buyWeight">—</div>
+        <div class="row">
+          <div class="qtybig"><button id="qMinus" type="button">−</button><span id="qVal">1</span><button id="qPlus" type="button">+</button></div>
+        </div>
+        <button class="btn btn--brand btn--block" id="cutAdd" type="button">أضف للسلة</button>
+        <div class="note">
+          <span>تقطيع وتجهيز حسب طلبك — مجاناً</span>
+          <span>توصيل مبرّد · الدفع عند الاستلام</span>
+          <span>السعر شامل ضريبة القيمة المضافة</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== related ===== -->
+  <section class="section">
+    <div class="sec-head">
+      <div><span class="eyebrow">من نفس المرجع</span><h2>قطعيات قريبة</h2></div>
+      <a class="seeall" href="cuts.html">كل القطعيات <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+    <div class="shelf" id="relatedCuts"></div>
+  </section>
+</main>
+
+<!-- mobile sticky buy -->
+<div class="buybar" id="buyBar">
+  <div class="bp"><span class="now" id="barPrice">—</span><span class="w" id="barWeight">—</span></div>
+  <button class="btn btn--brand" id="barAdd" type="button">أضف للسلة</button>
+</div>
+
+<footer class="footer"><div class="wrap"><div class="footer__top">
+  <div class="footer__brand">
+    <span class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></span>
+    <p>مرجع اللحوم: نشرح القطعة ومن أين تأتي وكيف تُطبخ — ثم نبيعها لك.</p>
+    <div class="meta"><span>العنوان: <b>الرياض</b></span><span>للطلبات: <b>9200 00000</b></span></div>
+  </div>
+  <div class="fcol"><h4>المرجع</h4><ul><li><a href="cuts.html">دليل القطعيات</a></li><li><a href="cuts.html">مخطط الذبيحة</a></li></ul></div>
+  <div class="fcol"><h4>تسوّق</h4><ul><li><a href="category.html">المتجر</a></li><li><a href="category.html">القطعيات والشرائح</a></li></ul></div>
+  <div class="fcol"><h4>حسابي</h4><ul><li><a href="account.html">لوحة الحساب</a></li><li><a href="wishlist.html">المفضلة</a></li></ul></div>
+</div><div class="footer__bottom"><span>© 2026 ترخيم — جميع الحقوق محفوظة</span><span>المملكة العربية السعودية</span></div></div></footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="سلة التسوق"><div class="drawer__head"><h3>سلة التسوق</h3><button class="x" id="closeCart" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="drawer__body" id="cartBody"></div><div class="drawer__foot" id="cartFoot" hidden><div class="tot"><span>الإجمالي</span><b><span id="cartTotal">0</span> ر.س</b></div><div class="ship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> توصيل مجاني فوق 300 ر.س</div><a class="btn btn--block" href="checkout.html">إتمام الطلب</a></div></aside>
+
+<aside class="mnav" id="mnav" aria-label="القائمة"><div class="mnav__head"><span class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></span><button class="x" id="closeMnav" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+<nav><a href="cuts.html">دليل القطعيات</a><a href="category.html">المتجر</a><a href="wishlist.html">المفضلة</a><a href="account.html">حسابي</a></nav></aside>
+
+<nav class="tabbar" id="tabbar">
+  <a class="tabbar__i" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z"/></svg><span>الرئيسية</span></a>
+  <a class="tabbar__i active" href="cuts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.5 4 9l8-4 8 4-5 2.5"/><path d="M4 9v6l8 4 8-4V9"/></svg><span>القطعيات</span></a>
+  <a class="tabbar__i" href="wishlist.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><span>المفضلة</span></a>
+  <button class="tabbar__i" id="tabCart" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg><span class="tb-badge" id="tabCartBadge">0</span><span>السلة</span></a>
+  <a class="tabbar__i" href="account.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>حسابي</span></a>
+</nav>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">تمت الإضافة للسلة</span></div>
+
+<script src="assets/js/main.js?v=9"></script>
+<script src="assets/js/cuts-data.js?v=1"></script>
+<script src="assets/js/cut.js?v=1"></script>
+</body>
+</html>

@@ -3,356 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>متجر اللحوم والذبائح الطازجة</title>
-<meta name="description" content="متجر اللحوم والذبائح الطازجة — لحم ضأن وبقر وعجل وإبل، ذبائح كاملة، مفروم وقطعيات، بذبح حلال وتوصيل مبرّد لكل مناطق المملكة.">
+<title>ترخيم — اعرف القطعة. أتقن الطبخة.</title>
+<meta name="description" content="ترخيم مرجع اللحوم: نشرح من أين تأتي كل قطعة، وقوامها ونسبة دهنها، وأي طريقة وحرارة تليق بها — ثم تشتريها وأنت متأكد.">
 <meta name="theme-color" content="#6B1D24">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Kufi+Arabic:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=8">
+<link rel="stylesheet" href="assets/css/style.css?v=9">
 </head>
 <body>
 
-<!-- ===== Utility bar ===== -->
-<div class="util">
-  <div class="wrap">
-    <div class="u-l">
-      <span class="promo">🎁 <b>300 ر.س</b> هدية عند تحميل التطبيق!</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> 9200 00000</span>
-    </div>
-    <div class="u-r">
-      <span>تتبّع طلبك</span>
-      <span>خدمة العملاء</span>
-      <span>حمّل التطبيق</span>
-    </div>
-  </div>
-</div>
+<div class="util"><div class="wrap">
+  <div class="u-l"><span class="promo">تقطيع وتجهيز <b>مجاني</b> مع كل قطعة</span><span>9200 00000</span></div>
+  <div class="u-r"><span>تتبّع طلبك</span><span>خدمة العملاء</span><span>حمّل التطبيق</span></div>
+</div></div>
 
-<!-- ===== Header ===== -->
 <header class="header">
   <div class="wrap header__row">
-    <button class="tool burger" id="burger" type="button">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-      <small>القائمة</small>
-    </button>
+    <button class="tool burger" id="burger" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg><small>القائمة</small></button>
     <a class="brand" href="index.html" aria-label="ترخيم — الرئيسية"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></a>
+    <nav class="nav" aria-label="التنقل الرئيسي">
+      <a href="cuts.html">دليل القطعيات</a>
+      <a href="#cook">مختبر الطبخ</a>
+      <a href="category.html">المتجر</a>
+    </nav>
     <div class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-      <input type="text" placeholder="دوّر على منتجك… لحم ضأن، بقر، عجل، إبل، مفروم…" aria-label="بحث">
-      <button class="go">بحث</button>
+      <input type="text" placeholder="ابحث عن قطعة أو طبخة…" aria-label="بحث"><button class="go">بحث</button>
     </div>
     <div class="header__tools">
-      <button class="tool d-hide" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-        <small>حسابي</small>
-      </button>
-      <button class="tool d-hide" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg>
-        <small>المفضلة</small>
-      </button>
-      <button class="tool" id="cartBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg>
-        <small>السلة</small>
-        <span class="cart-count" id="cartCount">0</span>
-      </button>
+      <a class="tool d-hide" href="account.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><small>حسابي</small></a>
+      <a class="tool d-hide" href="wishlist.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><small>المفضلة</small></a>
+      <button class="tool" id="cartBtn" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg><small>السلة</small><span class="cart-count" id="cartCount">0</span></button>
     </div>
   </div>
 </header>
 
-<!-- mobile search -->
-<div class="search-m">
-  <div class="search">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-    <input type="text" placeholder="دوّر على منتجك…" aria-label="بحث">
-  </div>
-</div>
+<div class="search-m"><div class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg><input type="text" placeholder="ابحث عن قطعة أو طبخة…" aria-label="بحث"></div></div>
 
-<!-- ===== Category nav ===== -->
-<nav class="catnav" aria-label="الأقسام">
-  <div class="wrap">
-    <span class="chip active">الكل</span>
-    <a class="chip" href="category.html">العروض</a>
-    <a class="chip" href="category.html">لحم الضأن</a>
-    <a class="chip" href="category.html">لحم البقر</a>
-    <a class="chip" href="category.html">لحم العجل</a>
-    <a class="chip" href="category.html">لحم الإبل</a>
-    <a class="chip" href="category.html">اللحم المفروم</a>
-    <a class="chip" href="category.html">القطعيات والشرائح</a>
-    <a class="chip" href="category.html">المطبخ</a>
-  </div>
-</nav>
-
-<!-- ===== Hero — عرض الأسبوع ===== -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-banner reveal">
-      <div class="ph ph--lg"><img class="imgfill" src="assets/img/banner-hero.webp" alt="عرض الأسبوع" fetchpriority="high"></div>
-      <div class="in">
-        <span class="eyebrow">عرض الأسبوع</span>
-        <h1>خصومات تجنّن على الذبائح الطازجة</h1>
-        <p>ذبح حلال · تقطيع وتجهيز مجاني · توصيل مبرّد لين باب البيت</p>
-        <div class="cd" id="countdown">
-          <div class="unit"><b data-cd="d">00</b><span>يوم</span></div>
-          <span class="sep">:</span>
-          <div class="unit"><b data-cd="h">00</b><span>ساعة</span></div>
-          <span class="sep">:</span>
-          <div class="unit"><b data-cd="m">00</b><span>دقيقة</span></div>
-          <span class="sep">:</span>
-          <div class="unit"><b data-cd="s">00</b><span>ثانية</span></div>
-        </div>
-        <button class="btn" type="button">تسوّق الآن
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
-        </button>
-      </div>
+<!-- ===== 01 · بيان المرجعية ===== -->
+<section class="wrap hero-ed">
+  <div>
+    <span class="eyebrow">مرجع اللحوم</span>
+    <h1>اعرف القطعة.<br><em>أتقن الطبخة.</em></h1>
+    <p class="lede">مو كل لحم ينفع لكل طبخة. نشرح لك من أين تأتي كل قطعة، وكيف تتصرّف على النار، وأي حرارة تليق بها — وبعدين تشتري وأنت متأكد، مو وأنت تخمّن.</p>
+    <div class="cta">
+      <a class="btn btn--brand" href="cuts.html">افتح مخطط الذبيحة
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg></a>
+      <a class="btn btn--ghost" href="category.html">تصفّح المتجر</a>
     </div>
+    <div class="hero-stats">
+      <div class="hs"><b>17</b><span>قطعية موثّقة</span></div>
+      <div class="hs"><b>7</b><span>مناطق تشريحية</span></div>
+      <div class="hs"><b>6</b><span>طرق طبخ</span></div>
+    </div>
+  </div>
+
+  <div class="hero-ed__chart">
+    <svg class="map-svg" viewBox="0 0 820 470" role="img" aria-label="مخطط قطعيات الذبيحة">
+      <path class="map-soft" d="M226,300 L262,300 L258,366 L270,408 L242,412 L228,368 Z"/>
+      <path class="map-soft" d="M482,300 L518,300 L514,366 L526,408 L498,412 L484,368 Z"/>
+      <path class="map-outline" d="M700,126 C726,110 762,108 782,122 C796,132 793,152 779,160 L742,175 L706,168 Z"/>
+      <path class="map-outline" d="M726,116 C730,100 744,94 752,100 C757,104 754,114 746,120"/>
+      <circle cx="752" cy="136" r="3.2" fill="var(--ink)"/>
+      <a href="cuts.html#leg"><g class="zg"><path class="zone" d="M262,150 L262,312 L186,312 C140,310 112,282 112,240 C112,196 136,166 178,157 Z"/><text class="zlabel" x="190" y="240">الفخذ</text></g></a>
+      <a href="cuts.html#loin"><g class="zg"><path class="zone" d="M262,150 L380,147 L380,264 L262,264 Z"/><text class="zlabel" x="321" y="210">الخاصرة</text></g></a>
+      <a href="cuts.html#rack"><g class="zg"><path class="zone" d="M380,147 L500,150 L500,264 L380,264 Z"/><text class="zlabel" x="440" y="210">الريش</text></g></a>
+      <a href="cuts.html#shoulder"><g class="zg"><path class="zone" d="M500,150 L622,162 L622,264 L500,264 Z"/><text class="zlabel" x="561" y="212">الكتف</text></g></a>
+      <a href="cuts.html#neck"><g class="zg"><path class="zone" d="M622,160 L702,126 L720,168 L640,204 L622,200 Z"/><text class="zlabel" x="668" y="172">الرقبة</text></g></a>
+      <a href="cuts.html#breast"><g class="zg"><path class="zone" d="M290,264 L622,264 L622,312 L318,312 C300,312 290,300 290,286 Z"/><text class="zlabel" x="452" y="294">الصدر والضلوع</text></g></a>
+      <a href="cuts.html#shank"><g class="zg"><path class="zone" d="M190,312 L236,312 L232,372 L246,414 L212,420 L194,376 Z"/><path class="zone" d="M524,312 L570,312 L566,372 L580,414 L546,420 L528,376 Z"/><text class="zlabel" x="213" y="352">الموزة</text></g></a>
+      <line class="map-tick" x1="90" y1="436" x2="800" y2="436"/>
+      <line class="map-tick" x1="90" y1="430" x2="90" y2="442"/>
+      <line class="map-tick" x1="800" y1="430" x2="800" y2="442"/>
+    </svg>
+    <span class="cap">مخطط تقريبي · اضغط منطقة</span>
   </div>
 </section>
 
-<!-- ===== Trust strip (under hero) ===== -->
+<!-- ===== الخدمة ===== -->
 <section class="trust">
   <div class="wrap trust__grid">
-    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h4l3 3v3a2 2 0 0 1-2 2h-1"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><div><b>توصيل مبرّد سريع</b><span>يحفظ اللحم طازج</span></div></div>
-    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>ذبح حلال</b><span>إشراف شرعي كامل</span></div></div>
-    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M6 3h12M9 21h6M12 15v6"/></svg></span><div><b>تقطيع وتجهيز مجاني</b><span>حسب طلبك</span></div></div>
-    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><div><b>الدفع عند الاستلام</b><span>وطرق دفع إلكترونية</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="15" height="12" rx="2"/><path d="M16 10h4l3 3v3a2 2 0 0 1-2 2h-1"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span><div><b>توصيل مبرّد سريع</b><span>يحفظ اللحم طازج</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></span><div><b>ذبح حلال</b><span>إشراف شرعي كامل</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M6 3h12M9 21h6M12 15v6"/></svg></span><div><b>تقطيع وتجهيز مجاني</b><span>حسب طلبك</span></div></div>
+    <div class="ti"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><div><b>الدفع عند الاستلام</b><span>وطرق دفع إلكترونية</span></div></div>
   </div>
 </section>
 
-<!-- ===== All categories ===== -->
-<section class="section" style="padding-top:6px">
+<!-- ===== 02 · وش تطبخ اليوم؟ ===== -->
+<section class="section">
   <div class="wrap">
-    <div class="sec-head"><div><h2>جميع الأقسام</h2><div class="sub">تصفّح كل أقسام المتجر</div></div></div>
-    <div class="tiles reveal">
-      <div class="tile" data-nav="category.html"><div class="ph ph--sm"><img class="imgfill" src="assets/img/cat-slaughtered.png" alt="الذبائح الكاملة" loading="lazy"></div><b>الذبائح الكاملة</b></div>
-      <div class="tile" data-nav="category.html"><div class="ph ph--sm"><img class="imgfill" src="assets/img/p-naimi.jpg" alt="لحم الضأن" loading="lazy"></div><b>لحم الضأن</b></div>
-      <div class="tile" data-nav="category.html"><div class="ph ph--sm"><img class="imgfill" src="assets/img/cat-kilo.jpg" alt="لحم البقر" loading="lazy"></div><b>لحم البقر</b></div>
-      <div class="tile" data-nav="category.html"><div class="ph ph--sm"><img class="imgfill" src="assets/img/cat-veal.png" alt="لحم العجل" loading="lazy"></div><b>لحم العجل</b></div>
-      <div class="tile" data-nav="category.html"><div class="ph ph--sm"><img class="imgfill" src="assets/img/cat-hashi.png" alt="لحم الإبل" loading="lazy"></div><b>لحم الإبل</b></div>
-      <div class="tile" data-nav="category.html"><div class="ph ph--sm"><img class="imgfill" src="assets/img/cat-grill.png" alt="المطبخ الجاهز" loading="lazy"></div><b>المطبخ الجاهز</b></div>
+    <div class="sec-head">
+      <div><span class="eyebrow">ابدأ من الطبخة</span><h2>وش تطبخ اليوم؟</h2>
+        <div class="sub">قول لنا الطبخة ونقول لك القطعة المناسبة — بدل ما تدوّر في كتالوج.</div></div>
+    </div>
+    <div class="dish-grid reveal">
+      <a class="dish" href="cuts.html#leg"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18h16M6 18c0-5 2.7-8 6-8s6 3 6 8"/><path d="M12 10V6M9 6h6"/></svg></span><b>كبسة</b><span>فخذ · كتف</span></a>
+      <a class="dish" href="cuts.html#shoulder"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M5 12a7 7 0 0 1 14 0M8 19h8"/><path d="M12 19v-3"/></svg></span><b>مندي</b><span>كتف · فخذ</span></a>
+      <a class="dish" href="cuts.html#rack"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.7 7-6.5 0-4-3-6-4-9-1.6 1.6-2 3-2 4.5C11 9 9 6.5 9 4.5 7 7 5 9.5 5 15.5 5 19.3 8 22 12 22Z"/></svg></span><b>مشاوي</b><span>ريش · أوصال</span></a>
+      <a class="dish" href="cuts.html#loin"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h11a4 4 0 0 1 0 8H8a5 5 0 0 1-5-5z"/><path d="M14 12 21 5"/></svg></span><b>ستيك</b><span>ريب آي · خاصرة</span></a>
+      <a class="dish" href="cuts.html#shank"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>طبخ بطيء</b><span>موزة · رقبة</span></a>
+      <a class="dish" href="cut.html?c=beef-neck"><span class="di"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M5 8c1-2 3-3 7-3s6 1 7 3M6 18h12"/></svg></span><b>برجر</b><span>مفروم 20٪</span></a>
     </div>
   </div>
 </section>
 
-<!-- ===== Featured tabs ===== -->
-<section class="section" style="padding-top:0" id="featured">
+<!-- ===== 03 · مناطق الذبيحة ===== -->
+<section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="ptabs" id="featTabs">
-      <span class="ptab active" data-tab="best">الأكثر مبيعاً</span>
-      <span class="ptab" data-tab="disc">الأكثر تخفيضاً</span>
-      <span class="ptab" data-tab="offers">العروض</span>
+    <div class="sec-head">
+      <div><span class="eyebrow">دليل القطعيات</span><h2>سبع مناطق — سبعة سلوكيات على النار</h2>
+        <div class="sub">كل منطقة لها قوام ونسبة دهن ومنهج طبخ يختلف. هذا هو الفرق بين طبخة تنجح وطبخة تُلام عليها اللحمة.</div></div>
+      <a class="seeall" href="cuts.html">افتح المخطط <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
-    <div class="pgrid reveal" id="featGrid"><!-- injected --></div>
+    <div class="primal-rail reveal" id="primalRail"></div>
   </div>
 </section>
 
-<!-- ===== Fixed banner ===== -->
+<!-- ===== 04 · قطعة الأسبوع ===== -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="fbanner reveal">
-      <div class="ph"><img class="imgfill" src="assets/img/banner-2.webp" alt="بوكسات العائلة" loading="lazy"></div>
-      <div class="in"><span class="eyebrow">بوكسات العائلة</span><h3>وفّر أكثر مع البوكسات الكبيرة</h3><p>تشكيلة لحوم مشكّلة تكفي العائلة بسعر أوفر</p><button class="btn btn--sm btn--light" type="button">تسوّق البوكسات</button></div>
+    <div class="sec-head"><div><span class="eyebrow">قطعة الأسبوع</span><h2>قطعة واحدة — مشروحة بالكامل</h2></div></div>
+    <div class="cut-hero reveal" id="featCut"></div>
+  </div>
+</section>
+
+<!-- ===== 05 · مختبر الطبخ ===== -->
+<section class="section" id="cook" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">مختبر الطبخ</span><h2>الحرارة هي الفرق</h2>
+        <div class="sub">درجة النضج ليست ذوقاً فقط — هي حرارة قابلة للقياس في قلب القطعة. هذه هي المرجعية.</div></div>
+    </div>
+    <div class="method-grid reveal">
+      <div class="method"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4 0 7-2.7 7-6.5 0-4-3-6-4-9-1.6 1.6-2 3-2 4.5C11 9 9 6.5 9 4.5 7 7 5 9.5 5 15.5 5 19.3 8 22 12 22Z"/></svg></span><b>شوي على الفحم</b><span>حرارة مباشرة عالية — قشرة سريعة وقلب طري. للقطعيات الطرية قليلة النسيج الضام.</span></div>
+      <div class="method"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h11a4 4 0 0 1 0 8H8a5 5 0 0 1-5-5z"/><path d="M14 12 21 5"/></svg></span><b>مقلاة حديد</b><span>تلامس كامل يعطي قشرة متساوية. جفّف سطح اللحم تماماً وإلا سُلق بدل أن يتحمّر.</span></div>
+      <div class="method"><span class="mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><b>طبخ بطيء</b><span>حرارة منخفضة وزمن طويل يحوّل الكولاجين إلى جيلاتين. للموزة والرقبة والصدر.</span></div>
+    </div>
+    <div class="temp-rail reveal" id="tempRail"></div>
+    <p style="font-family:var(--f-mono);font-size:.68rem;color:var(--muted);margin-top:14px">حرارة مركز القطعة بالمئوية · ترتفع 2–4 درجات أثناء الراحة بعد رفعها عن النار</p>
+  </div>
+</section>
+
+<!-- ===== 06 · المكتبة ===== -->
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">المكتبة</span><h2>أسئلة تُسأل كل يوم</h2></div>
+      <a class="seeall" href="cuts.html">كل الأدلة <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+    <div class="lib-grid reveal">
+      <a class="lib-card" href="cut.html?c=lamb-leg"><span class="k">دليل</span><h3>أي قطعة تنفع للكبسة؟</h3><p>لماذا يتفوّق الفخذ والكتف على بقية القطعيات في الأرز، وما الفرق بينهما في النتيجة النهائية.</p><span class="rd">اقرأ الدليل ←</span></a>
+      <a class="lib-card" href="cut.html?c=beef-ribeye"><span class="k">مقارنة</span><h3>الفرق بين الريب آي والتندرلوين</h3><p>واحد يُطبخ للنكهة والآخر للقوام. أيهما تختار ولماذا يختلف السعر بينهما كل هذا الاختلاف.</p><span class="rd">اقرأ المقارنة ←</span></a>
+      <a class="lib-card" href="cut.html?c=lamb-shank"><span class="k">تقنية</span><h3>لماذا تحتاج الموزة ثلاث ساعات؟</h3><p>الكولاجين لا يذوب بالحرارة العالية بل بالزمن. شرح ما يحدث داخل القطعة دقيقة بدقيقة.</p><span class="rd">اقرأ التقنية ←</span></a>
     </div>
   </div>
 </section>
 
-<!-- ===== Shelf 1: whole animals ===== -->
+<!-- ===== 07 · رفّ الطلب ===== -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><div><h2>الذبائح الكاملة</h2><div class="sub">ذبيحتك كاملة أو نصف أو ربع — مذبوحة ومجهّزة</div></div><a class="seeall" href="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
-    <div class="shelf reveal" id="shelf1"><!-- injected --></div>
+    <div class="sec-head">
+      <div><span class="eyebrow">اطلب الآن</span><h2>قطعيات جاهزة للطلب</h2>
+        <div class="sub">كل قطعة هنا لها صفحة مرجع كاملة — اضغط الاسم لتقرأها قبل أن تشتريها.</div></div>
+      <a class="seeall" href="category.html">كل المنتجات <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+    <div class="shelf reveal" id="shopShelf"></div>
   </div>
 </section>
 
-<!-- ===== Shelf 2: cuts ===== -->
+<!-- ===== آراء ===== -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><div><h2>القطعيات والشرائح</h2><div class="sub">فخذ · كتف · ريش · شرائح · ستيك</div></div><a class="seeall" href="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
-    <div class="shelf reveal" id="shelf2"><!-- injected --></div>
-  </div>
-</section>
-
-<!-- ===== Reviews / testimonials ===== -->
-<section class="section" id="reviews">
-  <div class="wrap">
-    <div class="sec-head"><div><h2>آراء عملائنا</h2><div class="sub">أكثر من 50 ألف عميل يثقون فينا</div></div><span class="seeall">كل التقييمات <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
+    <div class="sec-head"><div><span class="eyebrow">آراء العملاء</span><h2>من جرّب</h2></div></div>
     <div class="reviews reveal">
-      <div class="rcard">
-        <div class="rcard__top"><span class="ph av"></span><div class="nm"><b>أبو فيصل</b><span>الرياض</span></div><span class="verify">✔ موثّق</span></div>
-        <div class="stars"><span class="s">★★★★★</span><b>5.0</b></div>
-        <p>«اللحم طازج ونظيف والتقطيع ممتاز، والتوصيل جاء بسرعة. تجربة تستاهل والله.»</p>
-      </div>
-      <div class="rcard">
-        <div class="rcard__top"><span class="ph av"></span><div class="nm"><b>أم عبدالله</b><span>القصيم</span></div><span class="verify">✔ موثّق</span></div>
-        <div class="stars"><span class="s">★★★★★</span><b>5.0</b></div>
-        <p>«طلبت ذبيحة ضأن كاملة للعزيمة وكان الطعم رهيب، والكل مدحه. بأطلب منهم دايم.»</p>
-      </div>
-      <div class="rcard">
-        <div class="rcard__top"><span class="ph av"></span><div class="nm"><b>سلطان العتيبي</b><span>جدة</span></div><span class="verify">✔ موثّق</span></div>
-        <div class="stars"><span class="s">★★★★☆</span><b>4.0</b></div>
-        <p>«أسعار حلوة وجودة عالية، والتغليف مرتب ومحكم. شكراً على الخدمة الممتازة.»</p>
-      </div>
-      <div class="rcard">
-        <div class="rcard__top"><span class="ph av"></span><div class="nm"><b>ناصر الحربي</b><span>الدمام</span></div><span class="verify">✔ موثّق</span></div>
-        <div class="stars"><span class="s">★★★★★</span><b>5.0</b></div>
-        <p>«أفضل ذبايح جربتها، بلدي أصلي 100% والتجهيز مجاني. أنصح فيهم بشدة.»</p>
-      </div>
+      <div class="rcard"><div class="rcard__top"><span class="av"></span><div class="nm"><b>أبو فيصل</b><span>الرياض</span></div><span class="verify">✔ موثّق</span></div><div class="stars"><span class="s">★★★★★</span></div><p>«أول مرة أفهم ليش الموزة تحتاج وقت. طلبتها وطلعت زي ما وصفوها بالظبط.»</p></div>
+      <div class="rcard"><div class="rcard__top"><span class="av"></span><div class="nm"><b>أم عبدالله</b><span>القصيم</span></div><span class="verify">✔ موثّق</span></div><div class="stars"><span class="s">★★★★★</span></div><p>«صفحة القطعة وفّرت عليّ سؤال الجزّار. عرفت وش أطلب للكبسة من غير ما أحتار.»</p></div>
+      <div class="rcard"><div class="rcard__top"><span class="av"></span><div class="nm"><b>سلطان العتيبي</b><span>جدة</span></div><span class="verify">✔ موثّق</span></div><div class="stars"><span class="s">★★★★☆</span></div><p>«جدول الحرارات ثبّت لي الستيك. أول مرة يطلع نصف نيء زي المطاعم.»</p></div>
+      <div class="rcard"><div class="rcard__top"><span class="av"></span><div class="nm"><b>ناصر الحربي</b><span>الدمام</span></div><span class="verify">✔ موثّق</span></div><div class="stars"><span class="s">★★★★★</span></div><p>«التقطيع حسب الطلب مجاني فرق كبير. واللحم وصل مبرّد ونظيف.»</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== Videos gallery ===== -->
-<section class="section" style="padding-top:0" id="videos">
-  <div class="wrap">
-    <div class="sec-head"><div><h2>من تجارب عملائنا بالفيديو</h2><div class="sub">شوف الجودة بعينك قبل ما تطلب</div></div><span class="seeall">كل الفيديوهات <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
-    <div class="videos reveal">
-      <div class="vcard"><div class="ph"><img class="imgfill" src="assets/img/p-naimi.jpg" alt="تجربة عميل" loading="lazy"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">تجربة عميل — ذبيحة ضأن</span></div>
-      <div class="vcard"><div class="ph"><img class="imgfill" src="assets/img/p-harri.jpg" alt="من داخل الملحمة" loading="lazy"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">من داخل الملحمة</span></div>
-      <div class="vcard"><div class="ph"><img class="imgfill" src="assets/img/p-veal-half.jpg" alt="التقطيع والتجهيز" loading="lazy"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">التقطيع والتجهيز</span></div>
-      <div class="vcard"><div class="ph"><img class="imgfill" src="assets/img/cat-boxes.jpg" alt="توصيل الطلب" loading="lazy"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">توصيل الطلب لباب البيت</span></div>
-      <div class="vcard"><div class="ph"><img class="imgfill" src="assets/img/cat-grill.png" alt="وليمة جاهزة" loading="lazy"></div><span class="play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="cap">وليمة جاهزة من المطبخ</span></div>
-    </div>
+<!-- ===== النشرة ===== -->
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="news reveal">
+    <span class="disc">قطعة كل أسبوع</span>
+    <h2>قطعة واحدة مشروحة — كل أسبوع في بريدك</h2>
+    <p>من أين تأتي، كيف تُطبخ، وأي حرارة تليق بها. بدون عروض ولا إزعاج.</p>
+    <form id="newsForm"><input type="email" placeholder="بريدك الإلكتروني" required aria-label="البريد الإلكتروني"><button class="btn btn--light" type="submit">اشترك</button></form>
   </div>
-</section>
+</div></section>
 
-<!-- ===== Banners 2-up ===== -->
-<section class="section">
-  <div class="wrap">
-    <div class="banners reveal">
-      <div class="banner"><div class="ph"><img class="imgfill" src="assets/img/banner-hero2.webp" alt="توصيل مجاني" loading="lazy"></div><div class="in"><span class="eyebrow">توصيل مجاني</span><h3>ذبيحتك لين باب البيت</h3><button class="btn btn--sm btn--light" type="button">اطلب الآن</button></div></div>
-      <div class="banner"><div class="ph"><img class="imgfill" src="assets/img/banner-1.webp" alt="خصم الولائم" loading="lazy"></div><div class="in"><span class="eyebrow">خصم الولائم</span><h3>ولائم جاهزة بالطبخ</h3><button class="btn btn--sm btn--light" type="button">اكتشف المطبخ</button></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Live purchase ticker ===== -->
-<section class="section" style="padding-top:0">
-  <div class="wrap">
-    <div class="ticker reveal" id="ticker">
-      <span class="dot"></span>
-      <span class="tk-txt"><b>عميل من الرياض</b> طلب ذبيحة ضأن كاملة</span>
-      <span class="tk-time">قبل دقيقتين</span>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Newsletter / app ===== -->
-<section class="section">
-  <div class="wrap">
-    <div class="news reveal">
-      <span class="disc">🎁 300 ر.س هدية</span>
-      <h2>حمّل التطبيق واطلب ذبيحتك من جوالك</h2>
-      <p>اشترك ليوصلك كل جديد وأقوى عروض الأسبوع قبل الكل.</p>
-      <form id="newsForm">
-        <input type="email" placeholder="بريدك الإلكتروني" required aria-label="البريد الإلكتروني">
-        <button class="btn btn--light" type="submit">اشترك</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ===== Footer ===== -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer__top">
-      <div class="footer__brand">
-        <span class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></span>
-        <p>متجر لحوم وذبائح يوفّر أجود أنواع اللحوم الطازجة مع ضمان الجودة وأفضل خدمة توصيل.</p>
-        <div class="meta">
-          <span>العنوان: <b>الرياض — حي الملقا</b></span>
-          <span>السجل التجاري: <b>0000000000</b></span>
-          <span>للطلبات: <b>9200 00000</b></span>
-        </div>
-        <div class="social"><span class="sq"></span><span class="sq"></span><span class="sq"></span><span class="sq"></span></div>
-      </div>
-      <div class="fcol"><h4>روابط مهمة</h4>
-        <ul>
-          <li><span>عضوية المتجر</span></li>
-          <li><span>خدمة العملاء</span></li>
-          <li><span>الأسئلة الشائعة</span></li>
-          <li><span>سياسة الاستبدال والإرجاع</span></li>
-          <li><span>التغليف والتوصيل</span></li>
-          <li><span>المدونة</span></li>
-        </ul>
-      </div>
-      <div class="fcol"><h4>تسوّق</h4>
-        <ul>
-          <li><a href="category.html">العروض</a></li>
-          <li><a href="category.html">الذبائح الكاملة</a></li>
-          <li><a href="category.html">لحم الضأن والبقر</a></li>
-          <li><a href="category.html">القطعيات والشرائح</a></li>
-          <li><a href="category.html">اللحم المفروم</a></li>
-          <li><a href="category.html">المطبخ الجاهز</a></li>
-        </ul>
-      </div>
-      <div class="fcol"><h4>حسابي</h4>
-        <ul>
-          <li><span>تسجيل الدخول</span></li>
-          <li><span>طلباتي</span></li>
-          <li><span>تتبّع الطلب</span></li>
-          <li><span>المفضلة</span></li>
-          <li><span>بطاقة العميل الذهبية</span></li>
-          <li><span>حمّل التطبيق</span></li>
-        </ul>
-        <div class="footer__pay"><b>طرق الدفع</b><div class="row"><span class="pm"></span><span class="pm"></span><span class="pm"></span><span class="pm"></span></div></div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <span>© جميع الحقوق محفوظة 2026</span>
-      <span>المملكة العربية السعودية · الرياض</span>
-    </div>
-  </div>
-</footer>
-
-<!-- ===== Cart drawer ===== -->
-<div class="overlay" id="overlay"></div>
-<aside class="drawer" id="drawer" aria-label="سلة التسوق">
-  <div class="drawer__head">
-    <h3><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg> سلة التسوق</h3>
-    <button class="x" id="closeCart" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-  </div>
-  <div class="drawer__body" id="cartBody"></div>
-  <div class="drawer__foot" id="cartFoot" hidden>
-    <div class="tot"><span>الإجمالي</span><b><span id="cartTotal">0</span> ر.س</b></div>
-    <div class="ship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> توصيل مجاني للطلبات فوق 300 ر.س</div>
-    <button class="btn btn--block" type="button">إتمام الطلب</button>
-  </div>
-</aside>
-
-<!-- ===== Mobile nav ===== -->
-<aside class="mnav" id="mnav" aria-label="القائمة">
-  <div class="mnav__head">
+<footer class="footer"><div class="wrap"><div class="footer__top">
+  <div class="footer__brand">
     <span class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></span>
-    <button class="x" id="closeMnav" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <p>مرجع اللحوم: نشرح القطعة ومن أين تأتي وكيف تُطبخ — ثم نبيعها لك.</p>
+    <div class="meta"><span>العنوان: <b>الرياض</b></span><span>للطلبات: <b>9200 00000</b></span><span>السجل التجاري: <b>0000000000</b></span></div>
+    <div class="social"><span class="sq"></span><span class="sq"></span><span class="sq"></span><span class="sq"></span></div>
   </div>
-  <nav>
-    <a href="category.html">العروض</a>
-    <a href="category.html">الذبائح الكاملة</a>
-    <a href="category.html">لحم الضأن</a>
-    <a href="category.html">لحم البقر</a>
-    <a href="category.html">لحم العجل</a>
-    <a href="category.html">لحم الإبل</a>
-    <a href="category.html">اللحم المفروم</a>
-    <a href="category.html">القطعيات والشرائح</a>
-    <a href="category.html">المطبخ الجاهز</a>
-  </nav>
-  <div class="mnav__foot"><button class="btn btn--block" type="button">تسجيل الدخول</button></div>
-</aside>
+  <div class="fcol"><h4>المرجع</h4><ul><li><a href="cuts.html">دليل القطعيات</a></li><li><a href="cuts.html">مخطط الذبيحة</a></li><li><a href="#cook">مختبر الطبخ</a></li><li><a href="cut.html?c=lamb-shank">قطعة الأسبوع</a></li></ul></div>
+  <div class="fcol"><h4>تسوّق</h4><ul><li><a href="category.html">كل المنتجات</a></li><li><a href="cuts.html#leg">قطعيات الضأن</a></li><li><a href="cuts.html#rack">قطعيات البقر</a></li><li><a href="wishlist.html">المفضلة</a></li></ul></div>
+  <div class="fcol"><h4>حسابي</h4><ul><li><a href="account.html">لوحة الحساب</a></li><li><a href="account.html">طلباتي</a></li><li><a href="checkout.html">إتمام الطلب</a></li></ul>
+    <div class="footer__pay"><b>طرق الدفع</b><div class="row"><span class="pm"></span><span class="pm"></span><span class="pm"></span><span class="pm"></span></div></div></div>
+</div><div class="footer__bottom"><span>© 2026 ترخيم — جميع الحقوق محفوظة</span><span>المملكة العربية السعودية</span></div></div></footer>
 
-<!-- ===== Bottom tab bar ===== -->
-<nav class="tabbar" id="tabbar" aria-label="تنقّل سريع">
-  <button class="tabbar__i active" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z"/></svg><span>الرئيسية</span></button>
-  <button class="tabbar__i" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>الأقسام</span></button>
-  <button class="tabbar__i" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><span>المفضلة</span></button>
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="سلة التسوق"><div class="drawer__head"><h3>سلة التسوق</h3><button class="x" id="closeCart" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div><div class="drawer__body" id="cartBody"></div><div class="drawer__foot" id="cartFoot" hidden><div class="tot"><span>الإجمالي</span><b><span id="cartTotal">0</span> ر.س</b></div><div class="ship"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> توصيل مجاني فوق 300 ر.س</div><a class="btn btn--block" href="checkout.html">إتمام الطلب</a></div></aside>
+
+<aside class="mnav" id="mnav" aria-label="القائمة"><div class="mnav__head"><span class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></span><button class="x" id="closeMnav" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+<nav><a href="cuts.html">دليل القطعيات</a><a href="#cook">مختبر الطبخ</a><a href="category.html">المتجر</a><a href="cuts.html#leg">قطعيات الضأن</a><a href="cuts.html#rack">قطعيات البقر</a><a href="wishlist.html">المفضلة</a><a href="account.html">حسابي</a></nav></aside>
+
+<nav class="tabbar" id="tabbar">
+  <a class="tabbar__i active" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2h-4v-6H9v6H5a2 2 0 0 1-2-2z"/></svg><span>الرئيسية</span></a>
+  <a class="tabbar__i" href="cuts.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11.5 4 9l8-4 8 4-5 2.5"/><path d="M4 9v6l8 4 8-4V9"/></svg><span>القطعيات</span></a>
+  <a class="tabbar__i" href="wishlist.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><span>المفضلة</span></a>
   <button class="tabbar__i" id="tabCart" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.4 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg><span class="tb-badge" id="tabCartBadge">0</span><span>السلة</span></button>
-  <button class="tabbar__i" id="tabMenu" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>حسابي</span></button>
+  <a class="tabbar__i" href="account.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>حسابي</span></a>
 </nav>
 
-<!-- ===== Back to top ===== -->
 <button class="totop" id="toTop" aria-label="للأعلى" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
-
-<!-- ===== Toast ===== -->
 <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">تمت الإضافة للسلة</span></div>
 
-<script src="assets/js/main.js?v=8"></script>
+<script src="assets/js/main.js?v=9"></script>
+<script src="assets/js/cuts-data.js?v=1"></script>
+<script src="assets/js/home.js?v=1"></script>
 </body>
 </html>

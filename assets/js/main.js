@@ -189,8 +189,9 @@
   document.querySelectorAll(".gallery .thumb").forEach(t => t.addEventListener("click", () => {
     document.querySelectorAll(".gallery .thumb").forEach(x => x.classList.remove("active")); t.classList.add("active");
   }));
+  /* qty stepper — only on the legacy product page (cut.html binds its own) */
   const qv = document.getElementById("qVal");
-  if (qv) {
+  if (qv && document.getElementById("pAdd")) {
     document.getElementById("qMinus").addEventListener("click", () => { qv.textContent = Math.max(1, (+qv.textContent) - 1); });
     document.getElementById("qPlus").addEventListener("click", () => { qv.textContent = (+qv.textContent) + 1; });
   }
@@ -281,7 +282,10 @@
   chips.forEach(c => c.addEventListener("click", ev => { if (c.hasAttribute("data-nav")) return; chips.forEach(x => x.classList.remove("active")); c.classList.add("active"); }));
   renderCart();
 
-  /* ---------- Entry points (no <a>): wire account/wishlist/checkout ---------- */
+  /* public cart API for page-specific scripts (cut.js …) */
+  window.TKCart = { add: addItem, open: openDrawer, close: closeDrawer, toast: m => toast(m) };
+
+  /* ---------- Entry points: wire account/wishlist/checkout ---------- */
   document.querySelectorAll(".header__tools .tool").forEach(t => { const s = t.querySelector("small"); if (!s) return; const v = s.textContent.trim(); if (v === "حسابي") t.dataset.nav = "account.html"; else if (v === "المفضلة") t.dataset.nav = "wishlist.html"; });
   document.querySelectorAll(".tabbar__i").forEach(t => { const s = t.querySelector("span:last-child"); if (s && s.textContent.trim() === "المفضلة") t.dataset.nav = "wishlist.html"; });
   document.querySelectorAll(".mnav nav span").forEach(s => { if (s.textContent.trim() === "حسابي") s.dataset.nav = "account.html"; });
