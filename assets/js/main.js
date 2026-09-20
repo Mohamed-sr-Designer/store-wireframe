@@ -85,24 +85,57 @@
   function imgFor(cat, i) { let pool = DEF; for (const k in POOLS) { if (cat && cat.indexOf(k) > -1) { pool = POOLS[k]; break; } } return "assets/img/" + pool[i % pool.length]; }
   [BEST, DISC, OFFERS, WHOLE, CUTS, KITCHEN].forEach(l => l.forEach((p, i) => { p.img = imgFor(p.cat, i); }));
 
+  /* ---- cut index codes (ترخيم reference system) ---- */
+  const CODE_LETTER = [["ضأن", "ض"], ["بقر", "ب"], ["عجل", "ع"], ["إبل", "إ"], ["مفروم", "م"], ["الذبائح", "ذ"],
+  ["بوكس", "ب"], ["مشاوي", "ش"], ["المطبخ", "ط"], ["الولائم", "ط"], ["الإيدامات", "ط"], ["الأطباق", "ط"],
+  ["كبدة", "ق"], ["القطعيات", "ق"], ["طازج", "ق"]];
+  function codeFor(cat, i) {
+    let L = "ت";
+    for (const [k, v] of CODE_LETTER) { if (cat && cat.indexOf(k) > -1) { L = v; break; } }
+    return L + "–" + String(i + 1).padStart(2, "0");
+  }
+
+  /* ---- spec profile: culinary characteristics of the cut (not ratings) ----
+     tender = طراوة · fat = دهن · bold = قوة النكهة · effort = صعوبة التحضير  (0–5) */
+  const SPEC_BY_CUT = [
+    [/فخذ/, [3, 2, 4, 3]], [/كتف/, [2, 3, 4, 4]], [/ريش/, [4, 4, 4, 2]],
+    [/موزة|ساق/, [1, 2, 5, 5]], [/ستيك|ريب آي|شرائح|فيليه/, [5, 4, 3, 2]],
+    [/مفروم/, [5, 3, 3, 1]], [/مكعبات|مقطّع|مقطع/, [3, 2, 3, 3]],
+    [/ذبيحة|نصف|ربع/, [3, 3, 4, 4]], [/كبدة|سواقط|كوارع/, [4, 1, 5, 2]],
+    [/سنام/, [4, 5, 4, 3]], [/بوكس|وليمة|كبسة|مندي|قرصان|مرقوق|مظبي/, [3, 3, 4, 2]]
+  ];
+  function specFor(name) {
+    for (const [re, v] of SPEC_BY_CUT) { if (re.test(name)) return v; }
+    return [3, 3, 3, 3];
+  }
+  [BEST, DISC, OFFERS, WHOLE, CUTS, KITCHEN].forEach(l => l.forEach((p, i) => {
+    p.code = codeFor(p.cat, i); p.spec = specFor(p.name);
+  }));
+
   const SHOP = [...BEST.slice(0, 5), ...CUTS, ...WHOLE.slice(0, 4), ...DISC.slice(0, 5)].map((p, i) => ({ ...p, id: "sh" + i }));
   const RELATED = [...CUTS.slice(0, 3), ...BEST.slice(0, 3)].map((p, i) => ({ ...p, id: "rel" + i }));
 
   const money = n => Number(n).toLocaleString("en-US");
   const stars = (r, rev) => `<div class="stars"><span class="s">${"★".repeat(Math.round(r))}${"☆".repeat(5 - Math.round(r))}</span><b>${r.toFixed(1)}</b>${rev != null ? `<span>(${rev})</span>` : ""}</div>`;
 
+  /* spec meters — culinary profile of the cut, replaces star ratings */
+  const SPEC_KEYS = [["طراوة", ""], ["دهن", ""], ["نكهة", ""], ["تحضير", "eff"]];
+  const specStrip = s => `<div class="spec-strip">${SPEC_KEYS.map((k, i) =>
+    `<div class="spec-row ${k[1]}"><span class="k">${k[0]}</span><span class="spec-bar">${[1, 2, 3, 4, 5].map(n => `<i class="${n <= (s ? s[i] : 3) ? "on" : ""}"></i>`).join("")}</span></div>`).join("")}</div>`;
+
   function cardHTML(p) {
     const badges = p.off ? `<span class="tag-off">%${p.off}-</span>` : "";
-    return `<article class="pcard" data-nav="product.html">
+    return `<article class="pcard">
       <div class="pcard__media">
         ${p.img ? `<img class="imgfill" src="${p.img}" alt="${p.name}" loading="lazy">` : ""}
+        <a class="pcard__link" href="product.html" aria-label="${p.name}"></a>
         <div class="pcard__badges">${badges}</div>
-        <button class="wish" type="button" aria-label="المفضلة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></button>
+        <button class="wish" type="button" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></button>
       </div>
       <div class="pcard__body">
-        <span class="pcard__cat">${p.cat}</span>
-        <h3 class="pcard__title">${p.name}</h3>
-        ${stars(p.rating, p.reviews)}
+        <div class="pcard__meta"><span class="cut-code"><b>${p.code || ""}</b></span><span class="pcard__cat">${p.cat}</span></div>
+        <a class="pcard__title" href="product.html">${p.name}</a>
+        ${specStrip(p.spec)}
         <div class="pcard__foot">
           <div class="price${p.old ? " sale" : ""}">${money(p.price)}<span class="cur">ر.س</span>${p.old ? `<del>${money(p.old)}</del>` : ""}</div>
           <button class="add" type="button" aria-label="أضف للسلة" data-add data-id="${p.id}" data-name="${p.name}" data-price="${p.price}" data-img="${p.img || ""}">

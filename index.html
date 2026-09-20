@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>متجر اللحوم والذبائح الطازجة</title>
 <meta name="description" content="متجر اللحوم والذبائح الطازجة — لحم ضأن وبقر وعجل وإبل، ذبائح كاملة، مفروم وقطعيات، بذبح حلال وتوصيل مبرّد لكل مناطق المملكة.">
-<meta name="theme-color" content="#c1121f">
+<meta name="theme-color" content="#6B1D24">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=7">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Kufi+Arabic:wght@700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css?v=8">
 </head>
 <body>
 
@@ -35,7 +35,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       <small>القائمة</small>
     </button>
-    <div class="brand" aria-label="الشعار" data-nav="index.html"><span class="logo-dot" title="مكان الشعار"></span></div>
+    <a class="brand" href="index.html" aria-label="ترخيم — الرئيسية"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></a>
     <div class="search">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
       <input type="text" placeholder="دوّر على منتجك… لحم ضأن، بقر، عجل، إبل، مفروم…" aria-label="بحث">
@@ -71,14 +71,14 @@
 <nav class="catnav" aria-label="الأقسام">
   <div class="wrap">
     <span class="chip active">الكل</span>
-    <span class="chip" data-nav="category.html">العروض</span>
-    <span class="chip" data-nav="category.html">لحم الضأن</span>
-    <span class="chip" data-nav="category.html">لحم البقر</span>
-    <span class="chip" data-nav="category.html">لحم العجل</span>
-    <span class="chip" data-nav="category.html">لحم الإبل</span>
-    <span class="chip" data-nav="category.html">اللحم المفروم</span>
-    <span class="chip" data-nav="category.html">القطعيات والشرائح</span>
-    <span class="chip" data-nav="category.html">المطبخ</span>
+    <a class="chip" href="category.html">العروض</a>
+    <a class="chip" href="category.html">لحم الضأن</a>
+    <a class="chip" href="category.html">لحم البقر</a>
+    <a class="chip" href="category.html">لحم العجل</a>
+    <a class="chip" href="category.html">لحم الإبل</a>
+    <a class="chip" href="category.html">اللحم المفروم</a>
+    <a class="chip" href="category.html">القطعيات والشرائح</a>
+    <a class="chip" href="category.html">المطبخ</a>
   </div>
 </nav>
 
@@ -158,7 +158,7 @@
 <!-- ===== Shelf 1: whole animals ===== -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><div><h2>الذبائح الكاملة</h2><div class="sub">ذبيحتك كاملة أو نصف أو ربع — مذبوحة ومجهّزة</div></div><span class="seeall" data-nav="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
+    <div class="sec-head"><div><h2>الذبائح الكاملة</h2><div class="sub">ذبيحتك كاملة أو نصف أو ربع — مذبوحة ومجهّزة</div></div><a class="seeall" href="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     <div class="shelf reveal" id="shelf1"><!-- injected --></div>
   </div>
 </section>
@@ -166,7 +166,7 @@
 <!-- ===== Shelf 2: cuts ===== -->
 <section class="section" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><div><h2>القطعيات والشرائح</h2><div class="sub">فخذ · كتف · ريش · شرائح · ستيك</div></div><span class="seeall" data-nav="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></div>
+    <div class="sec-head"><div><h2>القطعيات والشرائح</h2><div class="sub">فخذ · كتف · ريش · شرائح · ستيك</div></div><a class="seeall" href="category.html">عرض الكل <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     <div class="shelf reveal" id="shelf2"><!-- injected --></div>
   </div>
 </section>
@@ -255,7 +255,7 @@
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
-        <span class="logo-dot" title="مكان الشعار"></span>
+        <span class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></span>
         <p>متجر لحوم وذبائح يوفّر أجود أنواع اللحوم الطازجة مع ضمان الجودة وأفضل خدمة توصيل.</p>
         <div class="meta">
           <span>العنوان: <b>الرياض — حي الملقا</b></span>
@@ -276,12 +276,12 @@
       </div>
       <div class="fcol"><h4>تسوّق</h4>
         <ul>
-          <li><span data-nav="category.html">العروض</span></li>
-          <li><span data-nav="category.html">الذبائح الكاملة</span></li>
-          <li><span data-nav="category.html">لحم الضأن والبقر</span></li>
-          <li><span data-nav="category.html">القطعيات والشرائح</span></li>
-          <li><span data-nav="category.html">اللحم المفروم</span></li>
-          <li><span data-nav="category.html">المطبخ الجاهز</span></li>
+          <li><a href="category.html">العروض</a></li>
+          <li><a href="category.html">الذبائح الكاملة</a></li>
+          <li><a href="category.html">لحم الضأن والبقر</a></li>
+          <li><a href="category.html">القطعيات والشرائح</a></li>
+          <li><a href="category.html">اللحم المفروم</a></li>
+          <li><a href="category.html">المطبخ الجاهز</a></li>
         </ul>
       </div>
       <div class="fcol"><h4>حسابي</h4>
@@ -321,19 +321,19 @@
 <!-- ===== Mobile nav ===== -->
 <aside class="mnav" id="mnav" aria-label="القائمة">
   <div class="mnav__head">
-    <span class="logo-dot" title="مكان الشعار"></span>
+    <span class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></span>
     <button class="x" id="closeMnav" aria-label="إغلاق"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   </div>
   <nav>
-    <span data-nav="category.html">العروض</span>
-    <span data-nav="category.html">الذبائح الكاملة</span>
-    <span data-nav="category.html">لحم الضأن</span>
-    <span data-nav="category.html">لحم البقر</span>
-    <span data-nav="category.html">لحم العجل</span>
-    <span data-nav="category.html">لحم الإبل</span>
-    <span data-nav="category.html">اللحم المفروم</span>
-    <span data-nav="category.html">القطعيات والشرائح</span>
-    <span data-nav="category.html">المطبخ الجاهز</span>
+    <a href="category.html">العروض</a>
+    <a href="category.html">الذبائح الكاملة</a>
+    <a href="category.html">لحم الضأن</a>
+    <a href="category.html">لحم البقر</a>
+    <a href="category.html">لحم العجل</a>
+    <a href="category.html">لحم الإبل</a>
+    <a href="category.html">اللحم المفروم</a>
+    <a href="category.html">القطعيات والشرائح</a>
+    <a href="category.html">المطبخ الجاهز</a>
   </nav>
   <div class="mnav__foot"><button class="btn btn--block" type="button">تسجيل الدخول</button></div>
 </aside>
@@ -353,6 +353,6 @@
 <!-- ===== Toast ===== -->
 <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">تمت الإضافة للسلة</span></div>
 
-<script src="assets/js/main.js?v=7"></script>
+<script src="assets/js/main.js?v=8"></script>
 </body>
 </html>
