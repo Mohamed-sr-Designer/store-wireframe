@@ -291,39 +291,118 @@
   document.querySelectorAll(".mnav nav span").forEach(s => { if (s.textContent.trim() === "حسابي") s.dataset.nav = "account.html"; });
   document.querySelectorAll("#cartFoot .btn--block").forEach(b => b.dataset.nav = "checkout.html");
   document.querySelectorAll("button").forEach(b => { if (b.textContent.trim() === "شراء الآن") b.dataset.nav = "checkout.html"; });
-  // heart toggle (outside wishlist)
-  document.addEventListener("click", e => { const w = e.target.closest(".wish"); if (!w || w.closest("#wishGrid")) return; w.classList.toggle("on"); });
+  /* ---------- Wishlist store (slugs, shared across pages) ----------
+     القطعة تُعرف من رابط بطاقتها cut.html?c=<slug>، فلا تحتاج البطاقات أي تعديل. */
+  const WKEY = "meatwf_wish";
+  function wishLoad() { try { return JSON.parse(localStorage.getItem(WKEY)) || []; } catch (e) { return []; } }
+  function wishSave(l) { try { localStorage.setItem(WKEY, JSON.stringify(l)); } catch (e) {} }
+  function slugOfCard(card) {
+    const a = card && card.querySelector('a[href*="cut.html?c="]');
+    if (!a) return null;
+    const m = a.getAttribute("href").match(/[?&]c=([^&]+)/);
+    return m ? decodeURIComponent(m[1]) : null;
+  }
+  window.TKWish = {
+    list: wishLoad,
+    has: s => wishLoad().indexOf(s) > -1,
+    toggle(s) { const l = wishLoad(); const i = l.indexOf(s); i > -1 ? l.splice(i, 1) : l.push(s); wishSave(l); return i === -1; },
+    paint: sc => paintHearts(sc)
+  };
+  /* اعكس الحالة المحفوظة على كل القلوب في الصفحة */
+  function paintHearts(scope) {
+    const l = wishLoad();
+    (scope || document).querySelectorAll(".pcard .wish").forEach(w => {
+      const s = slugOfCard(w.closest(".pcard"));
+      if (s) w.classList.toggle("on", l.indexOf(s) > -1);
+    });
+  }
+  paintHearts();
+  // heart toggle (outside the wishlist page, which manages its own removal)
+  document.addEventListener("click", e => {
+    const w = e.target.closest(".wish"); if (!w || w.closest("#wishGrid")) return;
+    const s = slugOfCard(w.closest(".pcard"));
+    if (!s) { w.classList.toggle("on"); return; }
+    const added = window.TKWish.toggle(s);
+    w.classList.toggle("on", added);
+    toast(added ? "تمت الإضافة للمفضلة" : "تمت الإزالة من المفضلة");
+  });
 
-  function emptyHTML(title, sub) { return `<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><h3>${title}</h3><p>${sub}</p><button class="btn" data-nav="category.html" type="button">تصفّح المنتجات</button></div>`; }
+  function emptyHTML(title, sub) { return `<div class="empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg><h3>${title}</h3><p>${sub}</p><button class="btn" data-nav="category.html" type="button">تصفّح القطعيات</button></div>`; }
 
   /* ---------- Wishlist page ---------- */
   const wg = document.getElementById("wishGrid");
   if (wg) {
-    let WISH = [...BEST.slice(0, 4), ...CUTS.slice(0, 4)].map((p, i) => ({ ...p, id: "wl" + i }));
-    const wc = document.getElementById("wishCount"), wa = document.getElementById("wishActions");
+    const T = window.TARKHEEM;
+    const wc = document.getElementById("wishCount");
+    const wishCard = c => `<article class="pcard">
+      <div class="pcard__media"><img class="imgfill" src="${c.img}" alt="${c.name}" loading="lazy">
+        <a class="pcard__link" href="cut.html?c=${c.slug}" aria-label="${c.name}"></a>
+        <button class="wish on" type="button" aria-label="إزالة من المفضلة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></button>
+      </div>
+      <div class="pcard__body">
+        <div class="pcard__meta"><span class="cut-code"><b>${c.code}</b></span><span class="pcard__cat">${T.PRIMALS[c.animal][c.primal].name}</span></div>
+        <a class="pcard__title" href="cut.html?c=${c.slug}">${c.name}</a>
+        <div class="pcard__foot">
+          <div class="price">${money(c.price)}<span class="cur">ر.س</span></div>
+          <button class="add" type="button" aria-label="أضف للسلة" data-wadd="${c.slug}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+          </button>
+        </div>
+      </div></article>`;
+
+    function wishCuts() { return T ? window.TKWish.list().map(s => T.bySlug(s)).filter(Boolean) : []; }
     function renderWish() {
-      if (!WISH.length) { wg.innerHTML = ""; document.getElementById("wishArea").innerHTML = emptyHTML("قائمة مفضلتك فاضية", "تصفّح المنتجات وأضف اللي يعجبك بضغطة على القلب."); return; }
-      wg.innerHTML = WISH.map(p => cardHTML(p).replace('class="wish"', 'class="wish on"')).join("");
-      bindAdd(wg);
-      if (wc) wc.textContent = WISH.length;
+      const list = wishCuts();
+      if (wc) wc.textContent = list.length;
+      if (!list.length) {
+        document.getElementById("wishArea").innerHTML =
+          emptyHTML("قائمة مفضلتك فاضية", "تصفّح القطعيات واحفظ اللي يعجبك بضغطة على القلب.");
+        const ah = document.getElementById("addAll"); if (ah) ah.hidden = true;
+        return;
+      }
+      wg.innerHTML = list.map(wishCard).join("");
     }
     renderWish();
     wg.addEventListener("click", e => {
-      const w = e.target.closest(".wish"); if (!w) return;
-      const card = w.closest(".pcard"); const idx = [...wg.children].indexOf(card);
-      if (idx > -1) { WISH.splice(idx, 1); renderWish(); toast("تمت الإزالة من المفضلة"); }
+      const w = e.target.closest(".wish");
+      if (w) {
+        /* لازم نوقف الصعود: بعد إعادة الرسم تصير البطاقة خارج الـDOM،
+           فيفشل شرط closest("#wishGrid") في الهاندلر العام ويعيد إضافتها. */
+        e.stopPropagation();
+        const card = w.closest(".pcard"), s = slugOfCard(card);
+        if (s) { window.TKWish.toggle(s); renderWish(); toast("تمت الإزالة من المفضلة"); }
+        return;
+      }
+      const b = e.target.closest("[data-wadd]");
+      if (b && T) {
+        const c = T.bySlug(b.dataset.wadd);
+        if (c) { addItem({ id: c.slug, name: c.name, price: c.price, img: c.img }); }
+      }
     });
     const addAll = document.getElementById("addAll");
-    if (addAll) addAll.addEventListener("click", () => { if (!WISH.length) return; WISH.forEach(p => addItem(p)); toast("تمت إضافة كل المفضلة للسلة"); });
+    if (addAll) addAll.addEventListener("click", () => {
+      const list = wishCuts(); if (!list.length) return;
+      list.forEach(c => addItem({ id: c.slug, name: c.name, price: c.price, img: c.img }));
+      toast("تمت إضافة كل المفضلة للسلة");
+    });
   }
 
   /* ---------- Checkout page ---------- */
   const sumItems = document.getElementById("sumItems");
   if (sumItems) {
-    const DEMO = [{ name: "فخذ ضأن بالعظم", price: 120, qty: 1, img: "assets/img/p-harri.jpg" }, { name: "لحم بقري مفروم — كيلو", price: 48, qty: 2, img: "assets/img/p-mince-veal.jpg" }, { name: "ذبيحة ضأن كاملة", price: 899, qty: 1, img: "assets/img/p-naimi.jpg" }];
     const gc = id => document.getElementById(id);
     function renderCheckout() {
-      const items = cart.length ? cart : DEMO;
+      const items = cart;
+      if (!items.length) {
+        sumItems.innerHTML = `<div class="sum-empty">
+          <p>سلتك فاضية — ما فيه شي نحسبه لك بعد.</p>
+          <a class="btn btn--block" href="category.html">تصفّح القطعيات</a></div>`;
+        ["sumSub", "sumVat", "sumTotal"].forEach(id => { if (gc(id)) gc(id).textContent = "— ر.س"; });
+        if (gc("sumShip")) gc("sumShip").textContent = "—";
+        if (gc("placeOrder")) gc("placeOrder").disabled = true;
+        return;
+      }
+      if (gc("placeOrder")) gc("placeOrder").disabled = false;
       sumItems.innerHTML = items.map(i => `<div class="sum-item"><div class="ph">${i.img ? `<img class="imgfill" src="${i.img}">` : ""}</div><div class="si-b"><h5>${i.name}</h5><span class="si-q">الكمية: ${i.qty}</span></div><span class="si-p">${money(i.price * i.qty)} ر.س</span></div>`).join("");
       const sub = items.reduce((s, i) => s + i.price * i.qty, 0);
       const ship = sub >= 300 ? 0 : 25, vat = Math.round(sub * 0.15), total = sub + ship + vat;

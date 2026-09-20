@@ -58,6 +58,7 @@
       </div></article>`).join("");
 
   $("otherDishes").innerHTML = T.DISHES.filter(x => x.slug !== d.slug).map(dishTile).join("");
+  if (window.TKWish) window.TKWish.paint($("dishCuts"));
 
   /* ---- structured data: HowTo + Breadcrumb ---- */
   (function ld() {

@@ -847,3 +847,12 @@ body.no-scroll{overflow:hidden}
   position:sticky;top:62px;z-index:56}
 .search-m .search{max-width:none;display:flex}
 @media(max-width:768px){.search-m{display:block}}
+
+/* سلة فاضية داخل ملخّص الدفع */
+.sum-empty{padding:26px 18px;text-align:center}
+.sum-empty p{color:var(--muted);font-size:.86rem;margin:0 0 14px}
+.co-side .btn[disabled],#placeOrder[disabled]{opacity:.45;pointer-events:none}
+
+/* تنبيه بيانات العرض — يميّز العيّنات عن البيانات الحقيقية */
+.demo-note{font-family:var(--f-mono);font-size:.68rem;line-height:1.7;color:var(--muted);
+  border:1px dashed var(--line);border-radius:var(--r);padding:10px 14px;margin:0 0 22px;background:var(--alt)}

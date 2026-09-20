@@ -67,6 +67,7 @@
   function render() {
     const list = T.CUTS.filter(matches).sort(SORTS[state.sort] || SORTS.code);
     grid.innerHTML = list.map(card).join("");
+    if (window.TKWish) window.TKWish.paint(grid);
     $("resCount").textContent = list.length;
     $("shopEmpty").hidden = list.length > 0;
     grid.hidden = list.length === 0;
@@ -92,10 +93,13 @@
   const ft = $("filterToggle");
   if (ft) ft.addEventListener("click", () => document.querySelector(".filter").classList.toggle("open"));
 
-  /* deep link: category.html?a=ضأن  أو  ?z=leg */
+  /* deep link: category.html?a=ضأن  أو  ?z=leg  أو  ?m=grill */
   const q = new URLSearchParams(location.search);
-  if (q.get("a")) { state.animal.add(q.get("a")); document.querySelectorAll('[data-g="animal"]').forEach(o => { if (o.dataset.v === q.get("a")) o.classList.add("on"); }); }
-  if (q.get("z")) { state.zone.add(q.get("z")); document.querySelectorAll('[data-g="zone"]').forEach(o => { if (o.dataset.v === q.get("z")) o.classList.add("on"); }); }
+  [["a", "animal"], ["z", "zone"], ["m", "method"]].forEach(([key, g]) => {
+    const v = q.get(key); if (!v) return;
+    state[g].add(v);
+    document.querySelectorAll('[data-g="' + g + '"]').forEach(o => { if (o.dataset.v === v) o.classList.add("on"); });
+  });
 
   /* add to cart + wishlist heart */
   document.addEventListener("click", e => {

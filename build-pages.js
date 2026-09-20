@@ -46,7 +46,7 @@ const cookMain = `<main class="wrap">
     <div class="method-grid" id="methodAll"></div>
   </section>
 
-  <section class="section" style="padding-top:0">
+  <section class="section" id="doneness" style="padding-top:0;scroll-margin-top:90px">
     <div class="sec-head"><div><span class="eyebrow">02 — درجة النضج</span><h2>مرجع الحرارات</h2>
       <div class="sub">حرارة مركز القطعة بالمئوية. اضغط أي درجة لترى أين تقع على المقياس.</div></div></div>
     <div class="ruler" style="max-width:640px">
