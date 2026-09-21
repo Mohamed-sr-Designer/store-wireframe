@@ -1,47 +1,52 @@
 # نُضْج — NUDJ
 
-> مرجع اللحوم: موقع سعودي يشرح قطعيات اللحم — من أين تأتي كل قطعة في الذبيحة، وقوامها ونسبة دهنها، وأي طريقة وحرارة تناسبها — ثم يبيعها. الموقع مرجع تعليمي أولاً ومتجر ثانياً.
+> ملحمة إلكترونية سعودية تبيع الذبائح وقطعيات الضأن والبقر والمفروم والبوكسات، مقطّعة ومغلّفة حسب طبخة العميل وتوصل مبرّدة. ومعها خدمة إضافية اختيارية مدفوعة اسمها «الخبرة»: أدلة مصوّرة للتقطيع والطبخ، مختبر الطبخ، واستشارة مع جزّار.
 
-## ما الذي يميّز المحتوى هنا
-- كل قطعة موثّقة بكود فهرسي، وموقع تشريحي على مخطط الذبيحة، وملف قوام (طراوة، دهن، قوة نكهة، صعوبة تحضير).
-- درجات النضج معطاة بحرارة مركز القطعة بالدرجات المئوية، لا بأوصاف عامة.
-- المحتوى الطهي معرفة عامة قابلة للتحقق. الأسعار والأوزان تقريبية لأغراض العرض.
+- كل الأسعار بالريال السعودي وشاملة ضريبة القيمة المضافة (15٪).
+- التوصيل 25 ر.س، ومجاني من 300 ر.س. المدن: الرياض، جدة، الدمام، الخبر، مكة المكرمة، المدينة المنورة.
+- الخبرة: الدليل الواحد 9 ر.س، اشتراك نُضْج+ 29 ر.س شهرياً أو 249 ر.س سنوياً، الاستشارة 49 ر.س (25 ر.س للأعضاء).
+- ملاحظة: الموقع حالياً نسخة عرض؛ الصور مستطيلات رمادية مؤقتة والأسعار تقريبية.
 
-## الصفحات الأساسية
-- [الرئيسية](https://mohamed-sr-designer.github.io/store-wireframe/): بيان المرجعية ومخطط الذبيحة.
-- [دليل القطعيات](https://mohamed-sr-designer.github.io/store-wireframe/cuts.html): مخطط تشريحي تفاعلي بسبع مناطق (الرقبة، الكتف، الريش، الخاصرة، الفخذ، الصدر، الموزة) لنوعي ضأن وبقر، مع فهرس كامل.
-- [مختبر الطبخ](https://mohamed-sr-designer.github.io/store-wireframe/cook.html): ست طرق طبخ، مرجع درجات النضج (50°–71°م)، كم لحم للشخص، وأشهر خمسة أخطاء.
-- [المكتبة](https://mohamed-sr-designer.github.io/store-wireframe/library.html): أدلة اختيار القطع والتقنيات.
-- [المتجر](https://mohamed-sr-designer.github.io/store-wireframe/category.html): الفهرس التجاري.
+## المتجر
+- [كل المنتجات](https://mohamed-sr-designer.github.io/store-wireframe/shop.html)
+- [مخطط الذبيحة](https://mohamed-sr-designer.github.io/store-wireframe/cuts.html): تسوّق حسب المنطقة (الرقبة، الكتف، الريش، الخاصرة، الفخذ، الصدر، الموزة)
+- [رقبة ضأن](https://mohamed-sr-designer.github.io/store-wireframe/lamb-neck.html): أغنى قطعة للمرق والقرصان — 55 ر.س للكيلو
+- [كتف ضأن بالعظم](https://mohamed-sr-designer.github.io/store-wireframe/lamb-shoulder.html): دهن داخلي ونكهة غنية — للكبسة والمندي — 165 ر.س للحبة
+- [ريش ضأن](https://mohamed-sr-designer.github.io/store-wireframe/lamb-rack.html): طرية بدهن خارجي — للشوي والمقلاة — 98 ر.س للكيلو
+- [خاصرة ضأن](https://mohamed-sr-designer.github.io/store-wireframe/lamb-loin.html): أطرى قطعة في الذبيحة — طبخ سريع — 105 ر.س للكيلو
+- [فخذ ضأن بالعظم](https://mohamed-sr-designer.github.io/store-wireframe/lamb-leg.html): شرائح نظيفة للكبسة والشوي الكامل — 189 ر.س للحبة
+- [فخذ ضأن منزوع العظم](https://mohamed-sr-designer.github.io/store-wireframe/lamb-leg-boneless.html): نضج متساوٍ وتقطيع سهل للعزائم — 175 ر.س للحبة
+- [موزة ضأن](https://mohamed-sr-designer.github.io/store-wireframe/lamb-shank.html): كولاجين عالٍ — قوام حريري بالطبخ البطيء — 32 ر.س للحبة
+- [صدر وضلوع ضأن](https://mohamed-sr-designer.github.io/store-wireframe/lamb-breast.html): أعلى دهن في الذبيحة — نتيجة غنية بسعر أقل — 52 ر.س للكيلو
+- [لحم ضأن مفروم](https://mohamed-sr-designer.github.io/store-wireframe/lamb-mince.html): دهن 15–20٪ — للكباب والكفتة والحشو — 65 ر.س للكيلو
+- [ريب آي](https://mohamed-sr-designer.github.io/store-wireframe/beef-ribeye.html): دهن متداخل عالٍ — أكثر ستيك يسامح الأخطاء — 62 ر.س للشريحة
+- [تندرلوين (فيليه)](https://mohamed-sr-designer.github.io/store-wireframe/beef-tenderloin.html): أطرى قطعة في البقرة — تُطبخ للقوام — 58 ر.س للشريحة
+- [ستربلوين](https://mohamed-sr-designer.github.io/store-wireframe/beef-striploin.html): طراوة عالية ونكهة بقرية واضحة — 52 ر.س للشريحة
+- [كتف بقري مكعبات](https://mohamed-sr-designer.github.io/store-wireframe/beef-chuck.html): للإيدامات واليخنات والكبسة — 58 ر.س للكيلو
+- [بريسكت (صدر بقري)](https://mohamed-sr-designer.github.io/store-wireframe/beef-brisket.html): للطبخ البطيء والتدخين — 72 ر.س للكيلو
+- [توب سايد](https://mohamed-sr-designer.github.io/store-wireframe/beef-round.html): قليل الدهن — شرائح سريعة أو طبخ رطب — 62 ر.س للكيلو
+- [موزة بقري (أوسو بوكو)](https://mohamed-sr-designer.github.io/store-wireframe/beef-shank.html): نخاع وكولاجين — مرق دسم — 55 ر.س للكيلو
+- [لحم بقري مفروم](https://mohamed-sr-designer.github.io/store-wireframe/beef-mince.html): دهن 15–20٪ — للبرجر وصلصة اللحم — 49 ر.س للكيلو
+- [ذبيحة ضأن كاملة](https://mohamed-sr-designer.github.io/store-wireframe/lamb-whole.html): تُقطّع وتُغلّف حسب طبختك — من 1,150 ر.س
+- [نصف ذبيحة ضأن](https://mohamed-sr-designer.github.io/store-wireframe/lamb-half.html): مناسب لعائلة أو طبخة كبيرة واحدة — من 620 ر.س
+- [ربع ذبيحة ضأن](https://mohamed-sr-designer.github.io/store-wireframe/lamb-quarter.html): أمامي أو خلفي — لطبخة واحدة — من 330 ر.س
+- [بوكس الشواء](https://mohamed-sr-designer.github.io/store-wireframe/box-grill.html): ريش وخاصرة وكباب لطلعة شواء — 199 ر.س
+- [بوكس الستيك](https://mohamed-sr-designer.github.io/store-wireframe/box-steak.html): ست شرائح من ثلاث قطعيات للمقارنة — 319 ر.س
+- [بوكس العائلة](https://mohamed-sr-designer.github.io/store-wireframe/box-family.html): مكعبات ومفروم وفخذ — لأسبوع كامل — 369 ر.س
 
-## القطعيات الموثّقة
-- رقبة ضأن (Lamb Neck) — كود ض–01
-- كتف ضأن بالعظم (Bone-in Lamb Shoulder) — كود ض–02
-- ريش ضأن مقطّعة (Lamb Rack / Chops) — كود ض–03
-- خاصرة ضأن (Lamb Loin Chops) — كود ض–04
-- فخذ ضأن بالعظم (Bone-in Leg of Lamb) — كود ض–05
-- فخذ ضأن منزوع العظم (Boneless Leg of Lamb) — كود ض–06
-- موزة ضأن (Lamb Shank) — كود ض–07
-- صدر وضلوع ضأن (Lamb Breast / Ribs) — كود ض–08
-- لحم ضأن مفروم (Ground Lamb) — كود ض–09
-- ريب آي بقري (Ribeye) — كود ب–01
-- تندرلوين (فيليه) بقري (Beef Tenderloin) — كود ب–02
-- ستربلوين (سيرلوين) (Striploin / NY Strip) — كود ب–03
-- لحم كتف بقري مكعبات (Beef Chuck Cubes) — كود ب–04
-- بريسكت (صدر بقري) (Brisket) — كود ب–05
-- توب سايد (شرائح ردف) (Topside / Round) — كود ب–06
-- موزة بقري (أوسو بوكو) (Beef Shank / Osso Buco) — كود ب–07
-- لحم بقري مفروم (Ground Beef) — كود ب–08
+## وش تطبخ؟ (أي قطعة لأي طبخة)
+- [كبسة](https://mohamed-sr-designer.github.io/store-wireframe/dish-kabsa.html): قطعة بالعظم، دهن متوسط، تتحمل 60–90 دقيقة سلق. 400–500 جم بالعظم للشخص. القطعيات: فخذ ضأن بالعظم، كتف ضأن بالعظم، كتف بقري مكعبات.
+- [مندي](https://mohamed-sr-designer.github.io/store-wireframe/dish-mandi.html): قطعة بالعظم، دهن مرتفع نسبياً، صبورة على الحرارة الطويلة. 400–500 جم بالعظم للشخص. القطعيات: كتف ضأن بالعظم، فخذ ضأن بالعظم، صدر وضلوع ضأن.
+- [مشاوي](https://mohamed-sr-designer.github.io/store-wireframe/dish-mashawi.html): قطعة طرية، نسيج ضام منخفض، دهن خارجي يحميها. 300–350 جم للشخص. القطعيات: ريش ضأن، خاصرة ضأن، ريب آي، لحم ضأن مفروم.
+- [ستيك](https://mohamed-sr-designer.github.io/store-wireframe/dish-steak.html): شريحة 2.5–4 سم، دهن متداخل، سطح جاف تماماً. 250–350 جم للشخص. القطعيات: ريب آي، ستربلوين، تندرلوين (فيليه).
+- [طبخ بطيء](https://mohamed-sr-designer.github.io/store-wireframe/dish-slow.html): قطعة عاملة، كولاجين مرتفع، عظم إن أمكن. 350–450 جم بالعظم للشخص. القطعيات: موزة ضأن، رقبة ضأن، موزة بقري (أوسو بوكو)، بريسكت (صدر بقري).
+- [برجر](https://mohamed-sr-designer.github.io/store-wireframe/dish-burger.html): مفروم دهن 18–20٪، بارد، قليل العجن. 150–180 جم للقرص الواحد. القطعيات: لحم بقري مفروم، لحم ضأن مفروم.
 
-## الطبخات المغطّاة
-كبسة · مندي · مشاوي · ستيك · طبخ بطيء · برجر — كل طبخة تشرح أي قطعة تحتاجها ولماذا، والخطوات، وكم تحتاج للشخص.
+## الخبرة
+- [مركز الخبرة ونُضْج+](https://mohamed-sr-designer.github.io/store-wireframe/expertise.html)
+- [مختبر الطبخ](https://mohamed-sr-designer.github.io/store-wireframe/cook.html)
+- [استشارة جزّار](https://mohamed-sr-designer.github.io/store-wireframe/consult.html)
+- [دليل تقطيع الذبيحة](https://mohamed-sr-designer.github.io/store-wireframe/guide-carcass.html)
 
-## أسئلة يجيب عنها الموقع
-- أي قطعة تنفع للكبسة أو المندي؟
-- ما الفرق بين الريب آي والتندرلوين؟
-- لماذا تحتاج الموزة طبخاً طويلاً؟
-- ما حرارة كل درجة نضج؟
-- كم كيلو لحم أحتاج لعدد معيّن من الأشخاص؟
-
-## ملاحظة
-الصور الحالية مؤقتة (placeholder) ولا تمثّل منتجات العلامة النهائية.
+## المساعدة
+- [الأسئلة الشائعة](https://mohamed-sr-designer.github.io/store-wireframe/help.html) · [تواصل معنا](https://mohamed-sr-designer.github.io/store-wireframe/contact.html) · [من نحن](https://mohamed-sr-designer.github.io/store-wireframe/about.html)
