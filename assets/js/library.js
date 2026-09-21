@@ -1,7 +1,7 @@
-/* ترخيم — المكتبة */
+/* نُضْج — المكتبة */
 (function () {
   "use strict";
-  const T = window.TARKHEEM; if (!T) return;
+  const T = window.NUDJ; if (!T) return;
   const el = document.getElementById("allDishes"); if (!el) return;
 
   const DICON = {

@@ -1,9 +1,9 @@
 /* =========================================================
-   ترخيم — الرئيسية
+   نُضْج — الرئيسية
    ========================================================= */
 (function () {
   "use strict";
-  const T = window.TARKHEEM; if (!T) return;
+  const T = window.NUDJ; if (!T) return;
   const money = n => Number(n).toLocaleString("en-US");
   const $ = id => document.getElementById(id);
 
@@ -12,7 +12,7 @@
      <span class="spec-bar">${[1, 2, 3, 4, 5].map(n => `<i class="${n <= s[i] ? "on" : ""}"></i>`).join("")}</span></div>`).join("")}</div>`;
 
   const cutCard = c => `<article class="pcard">
-      <div class="pcard__media"><img class="imgfill" src="${c.img}" alt="${c.name}" loading="lazy">
+      <div class="pcard__media">
         <a class="pcard__link" href="cut.html?c=${c.slug}" aria-label="${c.name}"></a></div>
       <div class="pcard__body">
         <div class="pcard__meta"><span class="cut-code"><b>${c.code}</b></span><span class="pcard__cat">${T.PRIMALS[c.animal][c.primal].name}</span></div>
@@ -31,7 +31,7 @@
   const f = T.bySlug(FEATURED);
   if (f && $("featCut")) {
     $("featCut").innerHTML = `
-      <div class="cut-hero__img"><img class="imgfill" src="${f.img}" alt="${f.name}"></div>
+      <div class="cut-hero__img"></div>
       <div class="cut-hero__in">
         <span class="cut-code"><b>${f.code}</b></span>
         <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin:.5rem 0 .3rem">${f.name}</h2>

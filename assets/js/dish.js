@@ -1,7 +1,7 @@
-/* ترخيم — صفحة الطبخة (ابدأ من الطبخة، انتهِ بالقطعة) */
+/* نُضْج — صفحة الطبخة (ابدأ من الطبخة، انتهِ بالقطعة) */
 (function () {
   "use strict";
-  const T = window.TARKHEEM; if (!T) return;
+  const T = window.NUDJ; if (!T) return;
   if (!document.getElementById("dishMain")) return;
   const $ = id => document.getElementById(id);
   const money = n => Number(n).toLocaleString("en-US");
@@ -21,9 +21,9 @@
   const slug = new URLSearchParams(location.search).get("d");
   const d = T.dishBySlug(slug) || T.DISHES[0];
 
-  document.title = `${d.name} — أي قطعة تحتاج؟ · ترخيم`;
+  document.title = `${d.name} — أي قطعة تحتاج؟ · نُضْج`;
   const md = document.querySelector('meta[name="description"]');
-  if (md) md.setAttribute("content", `${d.name}: ${d.needs}. القطعيات الموصى بها ولماذا، الخطوات، وكم لحم تحتاج للشخص — من ترخيم.`);
+  if (md) md.setAttribute("content", `${d.name}: ${d.needs}. القطعيات الموصى بها ولماذا، الخطوات، وكم لحم تحتاج للشخص — من نُضْج.`);
 
   $("crumbDish").textContent = d.name;
   $("dishEn").textContent = d.en.toUpperCase();
@@ -33,7 +33,7 @@
   $("dishWhy").textContent = d.why;
   $("dishAvoid").textContent = d.avoid;
   $("dishPer").textContent = d.perPerson;
-  $("dishImg").innerHTML = `<img class="imgfill" src="${d.img}" alt="${d.name}">`;
+  $("dishImg").innerHTML = ``;
 
   $("dishSteps").innerHTML = `<div class="cut-index">${d.steps.map((s, i) =>
     `<div class="cut-index__row" style="grid-template-columns:3rem 1fr">
@@ -41,7 +41,7 @@
 
   /* القطعيات الموصى بها */
   $("dishCuts").innerHTML = d.cuts.map(s => T.bySlug(s)).filter(Boolean).map(c => `<article class="pcard">
-      <div class="pcard__media"><img class="imgfill" src="${c.img}" alt="${c.name}" loading="lazy">
+      <div class="pcard__media">
         <a class="pcard__link" href="cut.html?c=${c.slug}" aria-label="${c.name}"></a></div>
       <div class="pcard__body">
         <div class="pcard__meta"><span class="cut-code"><b>${c.code}</b></span><span class="pcard__cat">${T.PRIMALS[c.animal][c.primal].name}</span></div>

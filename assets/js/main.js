@@ -68,24 +68,9 @@
     P("kt5", "كبسة لحم جاهزة", "الأطباق", 180, 240),
     P("kt6", "مظبي ضأن", "الأطباق", 260, 330)
   ];
-  // assign real food images (turkidabayeh) per meat type, cycling for variety
-  const POOLS = {
-    "ضأن": ["p-naimi.jpg", "p-harri.jpg", "p-najdi.jpg", "p-tais.jpg", "p-half-naimi.jpg", "p-half-harri.jpg", "p-harri-kilo.jpg"],
-    "بقر": ["p-veal-half.jpg", "p-veal-quarter.jpg", "p-veal-full.jpg"],
-    "عجل": ["p-veal-full.jpg", "p-veal-half.jpg", "p-veal-quarter.jpg", "p-veal-trotters.jpg"],
-    "إبل": ["p-hashi-full.jpg", "p-hashi-half.jpg", "p-hashi-kilo.jpg", "p-hashi-quarter.jpg"],
-    "مفروم": ["p-mince-lamb.jpg", "p-mince-veal.jpg", "p-mince-hashi.jpg"],
-    "الذبائح": ["p-naimi.jpg", "p-veal-full.jpg", "p-hashi-full.jpg", "p-half-naimi.jpg"],
-    "بوكس": ["cat-boxes.jpg", "cat-grill.png", "cat-mince.png"],
-    "مشاوي": ["cat-grill.png", "cat-boxes.jpg"],
-    "المطبخ": ["cat-grill.png", "cat-boxes.jpg", "p-naimi.jpg"], "الولائم": ["p-naimi.jpg", "cat-boxes.jpg"], "الإيدامات": ["cat-grill.png", "p-hashi-full.jpg"], "الأطباق": ["cat-boxes.jpg", "cat-grill.png"],
-    "كبدة": ["p-liver-lamb.jpg", "p-liver-veal.jpg", "p-liver-hashi.jpg"], "القطعيات": ["p-liver-lamb.jpg", "p-harri.jpg"], "طازج": ["p-liver-lamb.jpg", "p-liver-veal.jpg"]
-  };
-  const DEF = ["p-harri.jpg", "p-veal-half.jpg", "p-hashi-full.jpg", "p-mince-lamb.jpg", "p-naimi.jpg"];
-  function imgFor(cat, i) { let pool = DEF; for (const k in POOLS) { if (cat && cat.indexOf(k) > -1) { pool = POOLS[k]; break; } } return "assets/img/" + pool[i % pool.length]; }
-  [BEST, DISC, OFFERS, WHOLE, CUTS, KITCHEN].forEach(l => l.forEach((p, i) => { p.img = imgFor(p.cat, i); }));
 
-  /* ---- cut index codes (ترخيم reference system) ---- */
+
+  /* ---- cut index codes (نُضْج reference system) ---- */
   const CODE_LETTER = [["ضأن", "ض"], ["بقر", "ب"], ["عجل", "ع"], ["إبل", "إ"], ["مفروم", "م"], ["الذبائح", "ذ"],
   ["بوكس", "ب"], ["مشاوي", "ش"], ["المطبخ", "ط"], ["الولائم", "ط"], ["الإيدامات", "ط"], ["الأطباق", "ط"],
   ["كبدة", "ق"], ["القطعيات", "ق"], ["طازج", "ق"]];
@@ -127,7 +112,6 @@
     const badges = p.off ? `<span class="tag-off">%${p.off}-</span>` : "";
     return `<article class="pcard">
       <div class="pcard__media">
-        ${p.img ? `<img class="imgfill" src="${p.img}" alt="${p.name}" loading="lazy">` : ""}
         <a class="pcard__link" href="product.html" aria-label="${p.name}"></a>
         <div class="pcard__badges">${badges}</div>
         <button class="wish" type="button" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></button>
@@ -245,7 +229,7 @@
       const ks = document.getElementById("keepShopping"); if (ks) ks.addEventListener("click", closeDrawer);
       return;
     }
-    $body.innerHTML = cart.map(i => `<div class="citem"><div class="ph">${i.img ? `<img class="imgfill" src="${i.img}">` : ""}</div><div class="ci-b"><h5>${i.name}</h5><div class="ci-p">${money(i.price * i.qty)} ر.س</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><div class="qty"><button data-dec="${i.id}" type="button">−</button><span>${i.qty}</span><button data-inc="${i.id}" type="button">+</button></div><button class="ci-x" data-rm="${i.id}" type="button">إزالة</button></div></div></div>`).join("");
+    $body.innerHTML = cart.map(i => `<div class="citem"><div class="ph">${i.img ? `` : ""}</div><div class="ci-b"><h5>${i.name}</h5><div class="ci-p">${money(i.price * i.qty)} ر.س</div><div style="display:flex;align-items:center;justify-content:space-between;margin-top:8px"><div class="qty"><button data-dec="${i.id}" type="button">−</button><span>${i.qty}</span><button data-inc="${i.id}" type="button">+</button></div><button class="ci-x" data-rm="${i.id}" type="button">إزالة</button></div></div></div>`).join("");
     if ($total) $total.textContent = money(cart.reduce((s, i) => s + i.price * i.qty, 0));
     if ($foot) $foot.hidden = false;
   }
@@ -332,10 +316,10 @@
   /* ---------- Wishlist page ---------- */
   const wg = document.getElementById("wishGrid");
   if (wg) {
-    const T = window.TARKHEEM;
+    const T = window.NUDJ;
     const wc = document.getElementById("wishCount");
     const wishCard = c => `<article class="pcard">
-      <div class="pcard__media"><img class="imgfill" src="${c.img}" alt="${c.name}" loading="lazy">
+      <div class="pcard__media">
         <a class="pcard__link" href="cut.html?c=${c.slug}" aria-label="${c.name}"></a>
         <button class="wish on" type="button" aria-label="إزالة من المفضلة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></button>
       </div>
@@ -403,7 +387,7 @@
         return;
       }
       if (gc("placeOrder")) gc("placeOrder").disabled = false;
-      sumItems.innerHTML = items.map(i => `<div class="sum-item"><div class="ph">${i.img ? `<img class="imgfill" src="${i.img}">` : ""}</div><div class="si-b"><h5>${i.name}</h5><span class="si-q">الكمية: ${i.qty}</span></div><span class="si-p">${money(i.price * i.qty)} ر.س</span></div>`).join("");
+      sumItems.innerHTML = items.map(i => `<div class="sum-item"><div class="ph">${i.img ? `` : ""}</div><div class="si-b"><h5>${i.name}</h5><span class="si-q">الكمية: ${i.qty}</span></div><span class="si-p">${money(i.price * i.qty)} ر.س</span></div>`).join("");
       const sub = items.reduce((s, i) => s + i.price * i.qty, 0);
       const ship = sub >= 300 ? 0 : 25, vat = Math.round(sub * 0.15), total = sub + ship + vat;
       gc("sumSub").textContent = money(sub) + " ر.س";

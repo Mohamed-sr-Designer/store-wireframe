@@ -1,9 +1,9 @@
 /* =========================================================
-   ترخيم — صفحة دليل القطعيات (المخطط التفاعلي)
+   نُضْج — صفحة دليل القطعيات (المخطط التفاعلي)
    ========================================================= */
 (function () {
   "use strict";
-  const T = window.TARKHEEM; if (!T) return;
+  const T = window.NUDJ; if (!T) return;
   const map = document.getElementById("mapSvg"); if (!map) return;
 
   let animal = "ضأن";
@@ -33,7 +33,7 @@
       <div class="cut-list">
         ${list.length ? list.map(c => `
           <a class="cut-row" href="cut.html?c=${c.slug}">
-            <span class="thumb"><img class="imgfill" src="${c.img}" alt="${c.name}" loading="lazy"></span>
+            <span class="thumb"></span>
             <span class="cr-b">
               <span class="cut-code"><b>${c.code}</b></span>
               <b>${c.name}</b>

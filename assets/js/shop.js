@@ -1,7 +1,7 @@
-/* ترخيم — المتجر: فهرس القطعيات بتصفية حقيقية */
+/* نُضْج — المتجر: فهرس القطعيات بتصفية حقيقية */
 (function () {
   "use strict";
-  const T = window.TARKHEEM; if (!T) return;
+  const T = window.NUDJ; if (!T) return;
   const grid = document.getElementById("shopGrid"); if (!grid) return;
   const $ = id => document.getElementById(id);
   const money = n => Number(n).toLocaleString("en-US");
@@ -45,7 +45,7 @@
   };
 
   const card = c => `<article class="pcard">
-      <div class="pcard__media"><img class="imgfill" src="${c.img}" alt="${c.name}" loading="lazy">
+      <div class="pcard__media">
         <a class="pcard__link" href="cut.html?c=${c.slug}" aria-label="${c.name}"></a>
         ${c.old ? `<div class="pcard__badges"><span class="tag-off">%${Math.round((1 - c.price / c.old) * 100)}-</span></div>` : ""}
         <button class="wish" type="button" aria-label="أضف للمفضلة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1L12 21l7.7-7.6 1.1-1a5.5 5.5 0 0 0 0-7.8Z"/></svg></button>

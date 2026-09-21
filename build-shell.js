@@ -1,4 +1,4 @@
-/* ترخيم — شِل موحّد لكل الصفحات: قائمة الموبايل + شريط التابات + الفوتر.
+/* نُضْج — شِل موحّد لكل الصفحات: قائمة الموبايل + شريط التابات + الفوتر.
    كانت كل صفحة تحمل نسخة مختلفة، وبعضها يشير لأقسام لم تعد موجودة في البيانات.
    كل رابط هنا شغّال فعلاً: الروابط العميقة للمتجر تستخدم ?a= و ?z= و ?m= التي يقرأها shop.js.
    بيانات الاتصال غير المؤكدة تُكتب بين [أقواس] لتُستبدل بسهولة. */
@@ -41,7 +41,7 @@ const tabbar = file => {
 
 const FOOTER = `<footer class="footer"><div class="wrap"><div class="footer__top">
   <div class="footer__brand">
-    <span class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">ترخيم<small>TARKHEEM</small></span></span>
+    <span class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2.5" y="2.5" width="19" height="19"/><path d="M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8"/></svg><span class="wordmark">نُضْج<small>NUDJ</small></span></span>
     <p>مرجع اللحوم: نشرح القطعة، ومن أين تأتي، وكيف تُطبخ — ثم نبيعها لك.</p>
     <div class="meta"><span>المدينة: <b>[المدينة]</b></span><span>للطلبات: <b>[الرقم الموحّد]</b></span><span>السجل التجاري: <b>[رقم السجل]</b></span></div>
     <div class="social"><span class="sq"></span><span class="sq"></span><span class="sq"></span><span class="sq"></span></div>
@@ -51,7 +51,7 @@ const FOOTER = `<footer class="footer"><div class="wrap"><div class="footer__top
   <div class="fcol"><h4>تسوّق</h4><ul><li><a href="category.html">كل القطعيات</a></li><li><a href="category.html?a=%D8%B6%D8%A3%D9%86">لحم الضأن</a></li><li><a href="category.html?a=%D8%A8%D9%82%D8%B1">لحم البقر</a></li><li><a href="category.html?m=grill">الأنسب للشوي</a></li><li><a href="category.html?m=slow">الأنسب للطبخ البطيء</a></li></ul></div>
   <div class="fcol"><h4>حسابي</h4><ul><li><a href="account.html">لوحة الحساب</a></li><li><a href="wishlist.html">المفضلة</a></li><li><a href="checkout.html">إتمام الطلب</a></li></ul>
     <div class="footer__pay"><b>طرق الدفع</b><div class="row"><span class="pm"></span><span class="pm"></span><span class="pm"></span><span class="pm"></span></div></div></div>
-</div><div class="footer__bottom"><span>© 2026 ترخيم — جميع الحقوق محفوظة</span><span>المملكة العربية السعودية</span></div></div></footer>`;
+</div><div class="footer__bottom"><span>© 2026 نُضْج — جميع الحقوق محفوظة</span><span>المملكة العربية السعودية</span></div></div></footer>`;
 
 /* الشريط العلوي: كان يعد بهدية 300 ر.س وتطبيق غير موجودين.
    لا نعد بما لا نملك — نقول ما نقدّمه فعلاً، والاتصال يبقى [قوساً] يُستبدل. */
@@ -61,12 +61,12 @@ const SEARCH_PH = "دوّر على قطعة… ريش، فخذ، ريب آي، �
 
 /* عناوين ووصف الصفحات التي بُنيت قبل إعادة التموضع */
 const HEAD = {
-  "wishlist.html": ["المفضلة — قطعياتك المحفوظة · ترخيم", "القطعيات التي حفظتها للرجوع إليها — مع كودها ومنشئها وسعرها."],
-  "checkout.html": ["إتمام الطلب · ترخيم", "أكمل طلبك: التواصل، عنوان التوصيل، الموعد، وطريقة الدفع."],
-  "account.html": ["حسابي — الطلبات والعناوين · ترخيم", "لوحة حسابك في ترخيم: طلباتك، عناوين التوصيل، والإعدادات."]
+  "wishlist.html": ["المفضلة — قطعياتك المحفوظة · نُضْج", "القطعيات التي حفظتها للرجوع إليها — مع كودها ومنشئها وسعرها."],
+  "checkout.html": ["إتمام الطلب · نُضْج", "أكمل طلبك: التواصل، عنوان التوصيل، الموعد، وطريقة الدفع."],
+  "account.html": ["حسابي — الطلبات والعناوين · نُضْج", "لوحة حسابك في نُضْج: طلباتك، عناوين التوصيل، والإعدادات."]
 };
 
-/* أيقونة التبويب: نفس علامة ترخيم (خطوط القطع داخل مربع) — تمنع طلب favicon.ico الفاشل */
+/* أيقونة التبويب: نفس علامة نُضْج (خطوط القطع داخل مربع) — تمنع طلب favicon.ico الفاشل */
 const FAVICON = `<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%236B1D24'/%3E%3Cg fill='none' stroke='%23F4F1EA' stroke-width='1.6'%3E%3Cpath d='M6.5 16.5c2-4 4.2-6.6 5.6-9M10.4 18.2c1.9-3.9 3.8-6.4 5.2-8.8M14.6 18.6c1.4-2.9 2.4-4.4 3.3-5.8'/%3E%3C/g%3E%3C/svg%3E">`;
 
 /* الشريط العلوي يسبق <header> مباشرة في كل الصفحات، فنقطع عنده بدل عدّ الـ</div>

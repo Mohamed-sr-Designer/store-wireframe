@@ -1,7 +1,7 @@
-/* ترخيم — مختبر الطبخ */
+/* نُضْج — مختبر الطبخ */
 (function () {
   "use strict";
-  const T = window.TARKHEEM; if (!T) return;
+  const T = window.NUDJ; if (!T) return;
   const $ = id => document.getElementById(id);
   if (!$("methodAll")) return;
 

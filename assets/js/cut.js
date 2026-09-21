@@ -1,9 +1,9 @@
 /* =========================================================
-   ترخيم — صفحة القطعة (تعليمية أولاً، شراء أخيراً)
+   نُضْج — صفحة القطعة (تعليمية أولاً، شراء أخيراً)
    ========================================================= */
 (function () {
   "use strict";
-  const T = window.TARKHEEM; if (!T) return;
+  const T = window.NUDJ; if (!T) return;
   const root = document.getElementById("cutMain"); if (!root) return;
 
   const money = n => Number(n).toLocaleString("en-US");
@@ -15,14 +15,14 @@
   const set = (id, v) => { const e = $(id); if (e) e.textContent = v; };
 
   /* ---- head / meta ---- */
-  document.title = `${cut.name} — ${cut.code} · ترخيم`;
+  document.title = `${cut.name} — ${cut.code} · نُضْج`;
   $("pDesc").setAttribute("content",
-    `${cut.name} (${cut.en}): ${cut.origin} تعرّف على قوامها ونسبة دهنها وأفضل طريقة لطبخها — ترخيم.`);
+    `${cut.name} (${cut.en}): ${cut.origin} تعرّف على قوامها ونسبة دهنها وأفضل طريقة لطبخها — نُضْج.`);
 
   /* ---- hero ---- */
   set("crumbCut", cut.name); set("cutCode", cut.code); set("cutName", cut.name);
   set("cutEn", cut.en); set("cutWhy", cut.why); set("cutOrigin", cut.origin); set("cutTip", cut.tip);
-  $("cutImg").innerHTML = `<img class="imgfill" src="${cut.img}" alt="${cut.name}">`;
+  $("cutImg").innerHTML = ``;
 
   /* ---- origin locator ---- */
   set("locAnimal", cut.animal + " · المنطقة");
@@ -137,7 +137,7 @@
   /* ---- related cuts (same animal, different cut) ---- */
   const rel = T.byAnimal(cut.animal).filter(c => c.slug !== cut.slug).slice(0, 6);
   $("relatedCuts").innerHTML = rel.map(c => `<article class="pcard">
-      <div class="pcard__media"><img class="imgfill" src="${c.img}" alt="${c.name}" loading="lazy">
+      <div class="pcard__media">
         <a class="pcard__link" href="cut.html?c=${c.slug}" aria-label="${c.name}"></a></div>
       <div class="pcard__body">
         <div class="pcard__meta"><span class="cut-code"><b>${c.code}</b></span><span class="pcard__cat">${T.PRIMALS[c.animal][c.primal].name}</span></div>

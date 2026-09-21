@@ -1,5 +1,5 @@
 /* =========================================================
-   ترخيم — TARKHEEM
+   نُضْج — NUDJ
    مرجع اللحوم · Meat Authority
    Design System v1 — butcher paper / oxblood / raw-data pink
    ========================================================= */
@@ -856,3 +856,8 @@ body.no-scroll{overflow:hidden}
 /* تنبيه بيانات العرض — يميّز العيّنات عن البيانات الحقيقية */
 .demo-note{font-family:var(--f-mono);font-size:.68rem;line-height:1.7;color:var(--muted);
   border:1px dashed var(--line);border-radius:var(--r);padding:10px 14px;margin:0 0 22px;background:var(--alt)}
+
+/* ===== وايرفريم: كل خانات الصور مستطيلات رمادية مسطّحة ===== */
+:root{--ph:#D4D4D4;--ph-2:#C4C4C4}
+.ph::before,.ph::after{content:none!important}
+.ph,.pcard__media,.cut-hero__img,.gallery .main,.gallery .thumb,.cut-row .thumb,.citem .ph,.sum-item .ph,.map-ph,.acc-user .ph,.rcard__top .av{background:var(--ph)!important;background-image:none!important;border-radius:0!important}

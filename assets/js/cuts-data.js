@@ -1,9 +1,9 @@
 /* =========================================================
-   ترخيم — قاعدة بيانات القطعيات
+   نُضْج — قاعدة بيانات القطعيات
    المحتوى الطهي (المنشأ، القوام، الطرق، الحرارات) معرفة عامة قابلة للتحقق.
    الأسعار والأوزان تقريبية لأغراض العرض.
    ========================================================= */
-window.TARKHEEM = (function () {
+window.NUDJ = (function () {
 
   /* مناطق المخطط — نفس معرّفات الـ SVG */
   const ZONES = ["neck", "shoulder", "rack", "loin", "leg", "breast", "shank"];
@@ -43,7 +43,7 @@ window.TARKHEEM = (function () {
     /* ------------------------ ضأن ------------------------ */
     {
       slug: "lamb-neck", code: "ض–01", animal: "ضأن", primal: "neck",
-      name: "رقبة ضأن", en: "Lamb Neck", img: "assets/img/p-najdi.jpg",
+      name: "رقبة ضأن", en: "Lamb Neck",
       price: 68, old: 90, weight: "1–1.5 كجم",
       spec: [1, 3, 5, 4],
       origin: "أعلى مقدمة الذبيحة، فوق الكتف مباشرة. عضلة تعمل طوال اليوم لحمل الرأس، فنسيجها الضام كثيف.",
@@ -55,7 +55,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "lamb-shoulder", code: "ض–02", animal: "ضأن", primal: "shoulder",
-      name: "كتف ضأن بالعظم", en: "Bone-in Lamb Shoulder", img: "assets/img/p-najdi.jpg",
+      name: "كتف ضأن بالعظم", en: "Bone-in Lamb Shoulder",
       price: 95, old: 130, weight: "2–2.5 كجم",
       spec: [2, 3, 4, 4],
       origin: "مقدمة الذبيحة أسفل الرقبة، يشمل عظم اللوح وجزءاً من العضد.",
@@ -67,7 +67,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "lamb-rack", code: "ض–03", animal: "ضأن", primal: "rack",
-      name: "ريش ضأن مقطّعة", en: "Lamb Rack / Chops", img: "assets/img/p-harri-kilo.jpg",
+      name: "ريش ضأن مقطّعة", en: "Lamb Rack / Chops",
       price: 110, old: 150, weight: "0.8–1.2 كجم",
       spec: [4, 4, 4, 2],
       origin: "القفص الصدري العلوي بين الكتف والخاصرة — عضلة قليلة الحركة مغطاة بطبقة دهن خارجية.",
@@ -79,7 +79,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "lamb-loin", code: "ض–04", animal: "ضأن", primal: "loin",
-      name: "خاصرة ضأن", en: "Lamb Loin Chops", img: "assets/img/p-harri.jpg",
+      name: "خاصرة ضأن", en: "Lamb Loin Chops",
       price: 125, old: 165, weight: "0.9–1.3 كجم",
       spec: [5, 3, 3, 2],
       origin: "أعلى الظهر بين القفص الصدري والفخذ — أقل منطقة حركة في الجسم.",
@@ -91,7 +91,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "lamb-leg", code: "ض–05", animal: "ضأن", primal: "leg",
-      name: "فخذ ضأن بالعظم", en: "Bone-in Leg of Lamb", img: "assets/img/p-harri.jpg",
+      name: "فخذ ضأن بالعظم", en: "Bone-in Leg of Lamb",
       price: 120, old: 160, weight: "2–3 كجم",
       spec: [3, 2, 4, 3],
       origin: "الطرف الخلفي للذبيحة — عضلة كبيرة متماسكة قليلة الدهن.",
@@ -103,7 +103,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "lamb-leg-boneless", code: "ض–06", animal: "ضأن", primal: "leg",
-      name: "فخذ ضأن منزوع العظم", en: "Boneless Leg of Lamb", img: "assets/img/p-naimi.jpg",
+      name: "فخذ ضأن منزوع العظم", en: "Boneless Leg of Lamb",
       price: 135, old: 175, weight: "1.5–2 كجم",
       spec: [3, 2, 4, 2],
       origin: "نفس الفخذ بعد إزالة عظم الفخذ والحوض، يُلفّ ويُربط أسطوانياً.",
@@ -115,7 +115,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "lamb-shank", code: "ض–07", animal: "ضأن", primal: "shank",
-      name: "موزة ضأن", en: "Lamb Shank", img: "assets/img/p-tais.jpg",
+      name: "موزة ضأن", en: "Lamb Shank",
       price: 90, old: 125, weight: "0.4–0.6 كجم/حبة",
       spec: [1, 2, 5, 5],
       origin: "الجزء السفلي من الساق، أسفل الركبة — أكثر عضلة تعمل في الجسم كله.",
@@ -127,7 +127,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "lamb-breast", code: "ض–08", animal: "ضأن", primal: "breast",
-      name: "صدر وضلوع ضأن", en: "Lamb Breast / Ribs", img: "assets/img/p-half-harri.jpg",
+      name: "صدر وضلوع ضأن", en: "Lamb Breast / Ribs",
       price: 72, old: 98, weight: "1–1.5 كجم",
       spec: [2, 5, 4, 3],
       origin: "أسفل القفص الصدري — طبقات متناوبة من الدهن واللحم الرفيع.",
@@ -139,7 +139,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "lamb-mince", code: "ض–09", animal: "ضأن", primal: "shoulder",
-      name: "لحم ضأن مفروم", en: "Ground Lamb", img: "assets/img/p-mince-lamb.jpg",
+      name: "لحم ضأن مفروم", en: "Ground Lamb",
       price: 55, old: 90, weight: "1 كجم",
       spec: [5, 3, 4, 1],
       origin: "يُفرم عادة من الكتف والقصاصات — نسبة دهن 15–20٪.",
@@ -153,7 +153,7 @@ window.TARKHEEM = (function () {
     /* ------------------------ بقر ------------------------ */
     {
       slug: "beef-ribeye", code: "ب–01", animal: "بقر", primal: "rack",
-      name: "ريب آي بقري", en: "Ribeye", img: "assets/img/p-veal-quarter.jpg",
+      name: "ريب آي بقري", en: "Ribeye",
       price: 95, old: 130, weight: "300–400 جم/شريحة",
       spec: [5, 5, 4, 2],
       origin: "منطقة الضلع العلوية (الضلوع 6–12) — عضلة قليلة الحركة تتخللها عين دهنية مركزية.",
@@ -165,7 +165,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "beef-tenderloin", code: "ب–02", animal: "بقر", primal: "loin",
-      name: "تندرلوين (فيليه) بقري", en: "Beef Tenderloin", img: "assets/img/p-veal-half.jpg",
+      name: "تندرلوين (فيليه) بقري", en: "Beef Tenderloin",
       price: 165, old: 210, weight: "200–250 جم/شريحة",
       spec: [5, 1, 2, 3],
       origin: "شريط عضلي رفيع داخل تجويف الخاصرة، لا يحمل أي وزن ولا يتحرك عملياً.",
@@ -177,7 +177,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "beef-striploin", code: "ب–03", animal: "بقر", primal: "loin",
-      name: "ستربلوين (سيرلوين)", en: "Striploin / NY Strip", img: "assets/img/p-veal-half.jpg",
+      name: "ستربلوين (سيرلوين)", en: "Striploin / NY Strip",
       price: 120, old: 155, weight: "280–350 جم/شريحة",
       spec: [4, 4, 4, 2],
       origin: "أعلى الخاصرة خلف الضلع، بشريط دهن خارجي مميز على أحد الجانبين.",
@@ -189,7 +189,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "beef-chuck", code: "ب–04", animal: "بقر", primal: "shoulder",
-      name: "لحم كتف بقري مكعبات", en: "Beef Chuck Cubes", img: "assets/img/p-veal-quarter.jpg",
+      name: "لحم كتف بقري مكعبات", en: "Beef Chuck Cubes",
       price: 58, old: 82, weight: "1 كجم",
       spec: [2, 3, 5, 3],
       origin: "كتف البقرة — مجموعة عضلات عاملة بدهن داخلي جيد ونسيج ضام وفير.",
@@ -201,7 +201,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "beef-brisket", code: "ب–05", animal: "بقر", primal: "breast",
-      name: "بريسكت (صدر بقري)", en: "Brisket", img: "assets/img/cat-kilo.jpg",
+      name: "بريسكت (صدر بقري)", en: "Brisket",
       price: 78, old: 105, weight: "2–3 كجم",
       spec: [2, 4, 5, 5],
       origin: "صدر البقرة أسفل الكتف — ألياف طويلة جداً وطبقة دهن سطحية سميكة.",
@@ -213,7 +213,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "beef-round", code: "ب–06", animal: "بقر", primal: "leg",
-      name: "توب سايد (شرائح ردف)", en: "Topside / Round", img: "assets/img/p-veal-full.jpg",
+      name: "توب سايد (شرائح ردف)", en: "Topside / Round",
       price: 62, old: 85, weight: "1 كجم",
       spec: [2, 1, 3, 3],
       origin: "الفخذ الخلفي — عضلة كبيرة عاملة وقليلة الدهن جداً.",
@@ -225,7 +225,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "beef-shank", code: "ب–07", animal: "بقر", primal: "shank",
-      name: "موزة بقري (أوسو بوكو)", en: "Beef Shank / Osso Buco", img: "assets/img/p-veal-trotters.jpg",
+      name: "موزة بقري (أوسو بوكو)", en: "Beef Shank / Osso Buco",
       price: 74, old: 100, weight: "0.5–0.7 كجم/حبة",
       spec: [1, 2, 5, 4],
       origin: "ساق البقرة مقطوعة عرضياً مع عظم النخاع في المنتصف.",
@@ -237,7 +237,7 @@ window.TARKHEEM = (function () {
     },
     {
       slug: "beef-neck", code: "ب–08", animal: "بقر", primal: "neck",
-      name: "لحم بقري مفروم", en: "Ground Beef", img: "assets/img/p-mince-veal.jpg",
+      name: "لحم بقري مفروم", en: "Ground Beef",
       price: 48, old: 68, weight: "1 كجم",
       spec: [5, 3, 3, 1],
       origin: "يُفرم غالباً من الرقبة والكتف والقصاصات — نسبة دهن 15–20٪.",
@@ -262,7 +262,7 @@ window.TARKHEEM = (function () {
   /* ---------------- الأطباق — ابدأ من الطبخة ---------------- */
   const DISHES = [
     {
-      slug: "kabsa", name: "كبسة", en: "Kabsa", img: "assets/img/p-harri.jpg",
+      slug: "kabsa", name: "كبسة", en: "Kabsa",
       intro: "اللحم في الكبسة لا يُشوى ولا يُقلى — يُسلق أولاً ليعطي مرقه للأرز، ثم يُحمّر. القطعة الناجحة هنا هي التي تتحمل السلق الطويل بلا أن تتفكك، وتترك مرقاً غنياً.",
       needs: "قطعة بالعظم، دهن متوسط، تتحمل 60–90 دقيقة سلق",
       cuts: ["lamb-leg", "lamb-shoulder", "beef-chuck"],
@@ -272,7 +272,7 @@ window.TARKHEEM = (function () {
       avoid: "لا تستخدم الموزة أو الرقبة — ستتفكك في السلق ولن تحصل على شرائح."
     },
     {
-      slug: "mandi", name: "مندي", en: "Mandi", img: "assets/img/p-najdi.jpg",
+      slug: "mandi", name: "مندي", en: "Mandi",
       intro: "المندي طبخ بالبخار والحرارة المحيطة في حفرة أو فرن مغلق. اللحم ينضج ببطء في عصارته، فالمطلوب قطعة دهنها كافٍ ليحميها من الجفاف خلال ساعات.",
       needs: "قطعة بالعظم، دهن مرتفع نسبياً، صبورة على الحرارة الطويلة",
       cuts: ["lamb-shoulder", "lamb-leg", "lamb-breast"],
@@ -282,7 +282,7 @@ window.TARKHEEM = (function () {
       avoid: "لا تستخدم قطعاً قليلة الدهن كالتوب سايد — ستخرج جافة مهما طال الطبخ."
     },
     {
-      slug: "mashawi", name: "مشاوي", en: "Grill", img: "assets/img/p-harri-kilo.jpg",
+      slug: "mashawi", name: "مشاوي", en: "Grill",
       intro: "الشوي حرارة مباشرة وعالية وزمن قصير. هذا يعني أن القطعة يجب أن تكون طرية أصلاً — النار لا تُطري شيئاً في عشر دقائق.",
       needs: "قطعة طرية، نسيج ضام منخفض، دهن خارجي يحميها",
       cuts: ["lamb-rack", "lamb-loin", "beef-ribeye"],
@@ -292,7 +292,7 @@ window.TARKHEEM = (function () {
       avoid: "الموزة والرقبة والصدر لا تُشوى مباشرة — تحتاج طبخاً بطيئاً أولاً."
     },
     {
-      slug: "steak", name: "ستيك", en: "Steak", img: "assets/img/p-veal-quarter.jpg",
+      slug: "steak", name: "ستيك", en: "Steak",
       intro: "الستيك اختبار دقة: قشرة بنية عميقة من الخارج، وحرارة داخلية محسوبة بالدرجة. كل شيء يتقرر في الدقائق الأربع الأولى.",
       needs: "شريحة 2.5–4 سم، ترخيم داخلي، سطح جاف تماماً",
       cuts: ["beef-ribeye", "beef-striploin", "beef-tenderloin"],
@@ -302,7 +302,7 @@ window.TARKHEEM = (function () {
       avoid: "لا تملّح قبل الشوي بدقائق قليلة — إما قبل ساعة أو مباشرة قبل النار."
     },
     {
-      slug: "slow", name: "طبخ بطيء", en: "Slow Cooked", img: "assets/img/p-tais.jpg",
+      slug: "slow", name: "طبخ بطيء", en: "Slow Cooked",
       intro: "الطبخ البطيء ليس صبراً بلا سبب: الكولاجين في النسيج الضام يحتاج حرارة منخفضة وزمناً طويلاً ليتحول إلى جيلاتين. هذا التحول هو كل الفرق.",
       needs: "قطعة عاملة، كولاجين مرتفع، عظم إن أمكن",
       cuts: ["lamb-shank", "lamb-neck", "beef-shank", "beef-brisket"],
@@ -312,7 +312,7 @@ window.TARKHEEM = (function () {
       avoid: "لا تستخدم الفيليه أو الخاصرة — ستجف وتتفتت بلا قوام."
     },
     {
-      slug: "burger", name: "برجر", en: "Burger", img: "assets/img/p-mince-veal.jpg",
+      slug: "burger", name: "برجر", en: "Burger",
       intro: "البرجر الجيد يتحدد قبل النار: نسبة الدهن، درجة برودة المفروم، وكم مرة لمسته بيدك.",
       needs: "مفروم دهن 18–20٪، بارد، قليل العجن",
       cuts: ["beef-neck", "lamb-mince"],

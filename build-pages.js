@@ -1,4 +1,4 @@
-/* مولّد صفحات ترخيم — يبني الصفحات من نفس الـ shell (HTML ثابت، روابط قابلة للزحف) */
+/* مولّد صفحات نُضْج — يبني الصفحات من نفس الـ shell (HTML ثابت، روابط قابلة للزحف) */
 const fs = require("fs");
 const donor = fs.readFileSync("cuts.html", "utf8");
 
@@ -222,10 +222,10 @@ const shopMain = `<main class="wrap">
 </main>`;
 
 const pages = [
-  { file: "category.html", active: "shop", title: "المتجر — كل القطعيات · ترخيم", desc: "الفهرس التجاري لترخيم: كل القطعيات جاهزة للطلب، مصفّاة حسب نوع اللحم والمنطقة وطريقة الطبخ والقوام.", main: shopMain, scripts: '<script src="assets/js/shop.js?v=1"></script>' },
-  { file: "cook.html", active: "cook", title: "مختبر الطبخ — ترخيم", desc: "مختبر الطبخ من ترخيم: طرق الطبخ الست، مرجع درجات النضج بالدرجات المئوية، كم لحم للشخص، وأشهر الأخطاء التي تُفسد قطعة ممتازة.", main: cookMain, scripts: '<script src="assets/js/cook.js?v=1"></script>' },
-  { file: "dish.html", active: "dish", title: "وش تطبخ — ترخيم", desc: "ابدأ من الطبخة: كبسة، مندي، مشاوي، ستيك، طبخ بطيء، برجر — ونقول لك أي قطعة تحتاج ولماذا.", main: dishMain, scripts: '<script src="assets/js/dish.js?v=1"></script>' },
-  { file: "library.html", active: "lib", title: "المكتبة — ترخيم", desc: "مكتبة ترخيم: أدلة اختيار القطع، تقنيات الطبخ، مرجع الحرارات، وكم لحم تحتاج للعزيمة.", main: libMain, scripts: '<script src="assets/js/library.js?v=1"></script>' }
+  { file: "category.html", active: "shop", title: "المتجر — كل القطعيات · نُضْج", desc: "الفهرس التجاري لنُضْج: كل القطعيات جاهزة للطلب، مصفّاة حسب نوع اللحم والمنطقة وطريقة الطبخ والقوام.", main: shopMain, scripts: '<script src="assets/js/shop.js?v=1"></script>' },
+  { file: "cook.html", active: "cook", title: "مختبر الطبخ — نُضْج", desc: "مختبر الطبخ من نُضْج: طرق الطبخ الست، مرجع درجات النضج بالدرجات المئوية، كم لحم للشخص، وأشهر الأخطاء التي تُفسد قطعة ممتازة.", main: cookMain, scripts: '<script src="assets/js/cook.js?v=1"></script>' },
+  { file: "dish.html", active: "dish", title: "وش تطبخ — نُضْج", desc: "ابدأ من الطبخة: كبسة، مندي، مشاوي، ستيك، طبخ بطيء، برجر — ونقول لك أي قطعة تحتاج ولماذا.", main: dishMain, scripts: '<script src="assets/js/dish.js?v=1"></script>' },
+  { file: "library.html", active: "lib", title: "المكتبة — نُضْج", desc: "مكتبة نُضْج: أدلة اختيار القطع، تقنيات الطبخ، مرجع الحرارات، وكم لحم تحتاج للعزيمة.", main: libMain, scripts: '<script src="assets/js/library.js?v=1"></script>' }
 ];
 
 pages.forEach(p => { fs.writeFileSync(p.file, shell(p)); console.log("built " + p.file); });
